@@ -4560,7 +4560,7 @@ Blockly.Blocks['hub8735bit_temperature_value'] = {
 /*------------------------------------
 *					hub8735bit LED ¬ÛÃö¿n¤ì
 ------------------------------------*/
-lockly.Blocks['hub8735bit_led_set_xy'] = {
+Blockly.Blocks['hub8735bit_led_set_xy'] = {
   init: function() {
     this.appendDummyInput()      
         .appendField(Blockly.Msg.SHOWLED_SET)

@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('board-selector').onclick = function () {
 		var val = "";
 		if (this.selectedIndex!=-1) val = this.options[this.selectedIndex].value;
-		chrome.storage.local.set({'BOARD': val}, function() {
+		//chrome.storage.local.set({'BOARD': val}, function() {
+		localStorage.local.set({'BOARD': val}, function() {
 			console.log('store board setting to ' + val);
 		});
 		if (Blockly.getMainWorkspace()) {
@@ -83,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		}	
 	}
 	
-	chrome.storage.local.get(['BOARD'], function(item) {
+	//chrome.storage.local.get(['BOARD'], function(item) {
+	localStorage.storage.local.get(['BOARD'], function(item) {
 	  if(item.BOARD) {
 		//console.log("reload board setting to " + item.BOARD);
 		document.getElementById('board-selector').value = item.BOARD;
@@ -103,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (i==0)
 			com.add(new Option("COM?", ""));
 		else {
-			chrome.storage.local.get(['COM'], function(item) {
+			//chrome.storage.local.get(['COM'], function(item) {
+			localStorage.storage.local.get(['COM'], function(item) {
 			  if(item.COM) {
 				console.log("reload com setting to " + item.COM);
 				com.value = item.COM;
@@ -120,7 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		var val = "";
 		if (this.selectedIndex!=-1) 
 			val = this.options[this.selectedIndex].value;
-		chrome.storage.local.set({'COM': val}, function() {
+		//chrome.storage.local.set({'COM': val}, function() {
+		localStorage.local.set({'COM': val}, function() {
 			console.log('store com setting to ' + val);
 		});
 	}
@@ -153,7 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	setInterval(function(){ detectCOM(); }, 5000);
 	
 	//載入語言選單
-	chrome.storage.local.get(['LANG'], function(item) {
+	//chrome.storage.local.get(['LANG'], function(item) {
+	localStorage.local.get(['LANG'], function(item) {
 		lang = item.LANG?item.LANG:"zh-hant";
 		
 		if (typeof language != "undefined") {
@@ -928,7 +933,8 @@ function startUploading2(inoPath) {
 			
 			//工具箱目錄執行顯示狀態
 			setTimeout(function(){
-				chrome.storage.local.get(['CATEGORY'], function(item) {
+				//chrome.storage.local.get(['CATEGORY'], function(item) {
+				localStorage.local.get(['CATEGORY'], function(item) {
 					if(item.CATEGORY) {
 						var category =  Blockly.getMainWorkspace().getToolbox().getToolboxItems();
 						for (var i=0;i<category.length;i++) {
@@ -1840,7 +1846,8 @@ const sourceFilePath = path.join('123', 'arduino-1.8.19', 'portable', 'packages'
 	document.getElementById('lang-selector').onchange = function () {
 		if (this.selectedIndex!=-1) 
 			lang = this.options[this.selectedIndex].value;
-		chrome.storage.local.set({'LANG': lang}, function() {
+		//chrome.storage.local.set({'LANG': lang}, function() {
+		localStorage.local.set({'LANG': lang}, function() {
 			console.log('store language setting to ' + lang);
 			changeLanguage();
 			/*
@@ -1971,7 +1978,8 @@ function toolbox_display(chk, categoryid) {
 		if (category[i].toolboxItemDef_.id!="category_sep")
 			items.push([category[i].toolboxItemDef_.id , category[i].isHidden_==true?0:1]);
 	}
-	chrome.storage.local.set({'CATEGORY': items}, function() {});
+	//chrome.storage.local.set({'CATEGORY': items}, function() {});
+	localStorage.local.set({'CATEGORY': items}, function() {});
 }
 
 //縮放視窗
@@ -2019,7 +2027,8 @@ win.maximize();
 win.on('close', function(event) {
 	var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
 	var data = Blockly.Xml.domToText(xml);
-	chrome.storage.local.set({'CODE': data}, function() {});
+	//chrome.storage.local.set({'CODE': data}, function() {});
+	localStorage.local.set({'CODE': data}, function() {});
 	var yes = confirm(Blockly.Msg.WINDOW_CLOSE_MESSAGE);
 	if (yes) {
 		win.close(true);

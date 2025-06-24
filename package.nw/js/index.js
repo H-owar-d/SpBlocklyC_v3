@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('lang-selector').value = lang;
 	}
 			
-	
+	changeLanguage();
 	
 	//載入工具箱目錄
 	$.ajax({
@@ -1184,9 +1184,10 @@ function startUploading2(inoPath) {
 	}		
 
 	function addScript(url) {
+		var basePath = "/SpBlocklyC_v3/package.nw/";
 		var s = document.createElement("script");
 		s.type = "text/javascript";
-		s.src = url;
+		s.src = basePath+url;
 		$("body").append(s);
 	}
 	
@@ -1278,7 +1279,7 @@ function startUploading2(inoPath) {
 		}
 	}
 	updateMsg();
-	changeLanguage();
+	//changeLanguage();
 /* 無法辨識 download 結束
 	const downloadLink = document.querySelector('a[download]');
 	downloadLink.addEventListener('click',function()

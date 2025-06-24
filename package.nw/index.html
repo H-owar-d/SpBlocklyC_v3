@@ -1,0 +1,423 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SpBlocklyC</title>	
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/icon.css" />
+	<link rel="stylesheet" href="css/custom.css" />
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="vs/arduino.css">
+	<link rel="stylesheet" href="vs/editor/editor.main.css">
+	<script src="js/blockly_compressed.js"></script>
+	<script src="js/blocks_compressed.js"></script>
+	<script src="js/arduino_compressed.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/message.js"></script>
+	<script>
+		var version = "1.0.0";
+		var app_ver = "2025.0411_V3";
+		var search = location.search.toLowerCase();
+		var langlist = ["zh-hant", "en"];
+		var lang = langlist[0];;
+		for (var i=0;i<langlist.length;i++) {
+			if (search.indexOf("lang=" + langlist[i])!=-1) {
+				lang = langlist[i];
+				break;
+			}
+		}
+		document.write("\<script src='msg/"+lang+".js'\>\<\/script>");		
+	</script>	
+	<script src="msg/language.js"></script>		
+	<script src="systemBlocks/systemblocks.js"></script>
+	<script src="customBlocks/customblocks.js"></script>	
+	<script src="plugin/ScreenShot/screenshot.js"></script>
+	<script src="plugin/Scroll/AutoScroll.js"></script>
+	<script src="plugin/Scroll/Scroll.js"></script>
+	<script src="plugin/Scroll/ScrollBlockDragger.js"></script>
+	<script src="plugin/Scroll/ScrollMetricsManager.js"></script>
+	<script src="plugin/ContentHighLight/ContentHighLight.js"></script>	
+	<script src="plugin/WorkspaceBackpack/backpack.js"></script>	
+	<script src="plugin/WorkspaceBackpack/backpack_helpers.js"></script>
+	<script src="plugin/WorkspaceBackpack/options.js"></script>	
+	<script src="plugin/WorkspaceBackpack/ui_events.js"></script>
+	<script src="plugin/myPickPlaceBlock/myPickPlaceBlock.js"></script>	
+	<script src="plugin/myInsertBlock/myInsertBlock.js"></script>	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.js"></script>	
+	<script src="js/jquery.ui.touch-punch.min.js"></script>		
+</head>
+<body class="root">
+
+<main id="main" class="has-tabs" >
+    <!-- PAGE TABS -->
+<!--
+	<div id="banner_bar" class="banner_bar">
+		<div class="banner menu row">
+			<div class="left banner menu">
+				<div class="ui item logo organization" role="menuitem">	
+					<img class="ui image mobile only" src="media/WinsTec logo.png" alt="Winstec 標誌">
+				</div>
+				<div aria-label="micro:bit 標誌" role="menuitem" class="ui item logo brand mobile hide">
+					<img class="ui  logo" src="https://pxt.azureedge.net/blob/d955ce94fc3f7d2c6573300c71a56dc1d92c9bf0/static/logo.portrait.white.svg" alt="micro:bit 標誌">
+				</div>
+			</div>
+			<div class="centor banner menu">
+				<div class="ui item logo organization" role="menuitem">
+				</div>
+			</div>
+			<div class="right banner menu">
+				<div class="ui item logo organization" role="menuitem">
+				</div>
+			</div>
+		</div>
+		-->
+	<div id="banner_bar" class="banner_bar"  style="width:100vw border-width:2px;border-bottom-style:solid;border-color:#bdc7c7;padding:1px">
+	<table style="width: 100%;">
+	  <tr>
+	    <!-- 左邊 logo -->
+	    <td style="width: 10vw; text-align: left; padding-left: 2vw;">
+	      <ul id="tabs" style="font-size: 32px; list-style: none; margin: 0;">
+	        <img src="media/WinsTec logo.png" alt="Winstec" height="25px">
+	      </ul>
+	    </td>
+	
+	    <!-- 中間 tabs -->
+	    <td style="width: 40vw; text-align: center;">
+		  <div style="font-size: 32px; display: flex; justify-content: center; align-items: center; gap: 2vw;">		 
+      <!-- 積木區域 -->  
+		    <div style="flex: 1; text-align: right;">
+		      <a id="msg_toolbox" onclick="displayTab('category_content');" style="display: inline-block; width: 50%;  text-align: center">積木區域</a> 
+		    </div>
+		    <!-- 程式碼 --> 
+		    <div style="flex: 1; text-align: left;">
+		      <a id="msg_code" onclick="displayTab('code_content');" style="display: inline-block; width: 50%; text-align: center;">程式碼</a>
+		    </div>		
+		  </div>
+	    <!--右邊語言選單 -->     
+	    <td style="width: 20vw; text-align: right; padding-right: 2vw;">
+     	<i class="material-icons" style="vertical-align: middle;">language</i>
+      <select id="lang-selector" style="margin: 0; font-size: 28px; vertical-align: middle;"></select>
+	    </td>
+	  </tr>
+	</table>
+<!--	
+		<table style="width: 100%;">
+		<tr>
+			<td style="width: 10vw text-align:left">
+				<ul id="tabs" style="font-size:32px -align: middl">
+					<img src="media/WinsTec logo.png" alt="Winstec" height="25px">
+				</ul>
+			</td>
+			<td style="width: 80vw text-align:center">
+				<div id="tabs" style="font-size:32px">
+					<div class="tabs_msg_toolbox">
+					<li class="li_msg_toolbox"><a id="msg_toolbox" onclick="displayTab('category_content');">積木區域</a></li>
+					</div>
+					<div class="tabs_msg_toolbox">
+					<li class="li_msg_code"><a id="msg_code" onclick="displayTab('code_content');">程式碼</a></li>
+					</div>
+				</div>
+			</td>
+			<td style="width: 10vw  text-align:right">
+			<i class="material-icons">language</i>
+					<i style="text-align: center;line-height: 3vw;-align: middle;">
+						<select id="lang-selector" style="margin:0;font-size:28px">
+						</select>
+					</i>
+			</td>
+		</tr>					
+	</table>
+-->	
+	</div>  
+	<!-- CONTENT  -->
+	<div class="drop-shadow"></div>
+	
+	<div id="category_content" class="content">
+		<div id="root"></div>
+		<xml id="toolbox" style="display: none"></xml>
+		<div id="tools_bar" class="tools_bar" style="border-width:2px;border-top-style:solid;border-color:#bdc7c7;padding:1px";>
+			<table style="width: 100%;">	
+				<td style="width: 60vw">
+				<div id="tabs" style="font-size:28px">
+					<div class="tabs_msg_toolbox">
+					<li class="li_msg_toolbox"><a class="button-fixed" id="button_compiler" onclick="button_compiler" title="Compiler">編譯</a></li>
+					</div>
+					<div class="tabs_msg_toolbox">
+					<li class="li_msg_code"><!--<a id="button_download" onclick="button_download" title="Download">下載</a></li>-->
+					<!--<href="file:///arduino-1.8.19\portable\packages\ideasHatch\tools\ameba_pro2_tools\1.3.5\flash_ntz.bin" download="FLASH_HUB8735-BIT.bin" title="Download">下載>-->
+					<a class="button-fixed" id="button_download" href="file:///arduino_data\packages\ideasHatch\tools\ameba_pro2_tools\1.4.1\flash_ntz.bin" download title="Download">下載</a></li>
+					</div>
+					<div class="tabs_msg_toolbox">
+					<li class="li_msg_code"><a class="button-fixed" id="button_save_ino" onclick="button_save_ino" title="Save files">儲存</a></li>
+					</div>
+					<div class="tabs_msg_toolbox">
+					<li class="li_msg_code"><a class="button-fixed" id="button_open_xml" onclick="button_open_xml" title="Open xml file">讀取</a></li>
+					</div>
+					<div class="tabs_msg_toolbox">
+					<li class="li_msg_code"><a class="button-fixed" id="button_upload" onclick="button_upload" title="Upload">上傳</a></li>
+					</div>
+				</div>
+				</td>		
+				<td style="width: calc(100vw - 300px) ">
+						<!--<ul id="toolbar">-->
+						<div id="tabs_toolbar" style="font-size:32px">
+							<li style="display:none;"><a href="#" id="button_upload" title="Upload"><i class="small material-icons">play_circle_filled</i></a></li>
+							<li style="display:none;><a href="#" id="button_putty" title="PuTTY serial monitor"><i class="small material-icons">loupe</i></a></li>
+							<li style="display:none;><a href="#" id="button_code" title="Arduino Code"><i class="small material-icons">dvr</i></a></li>
+							<li style="display:none;><a href="#" id="button_reset" title="Reset workspace"><i class="small material-icons">create</i></a></li>
+							<li style="display:none;><a href="#" id="button_open_ino" title="Open ino file"><i class="small material-icons">open_in_new</i></a></li>
+							<li style="display:none;><a href="#" id="button_open_xml" title="Open xml file"><i class="small material-icons">folder_open</i></a></li>
+							<li style="display:none;><a href="#" id="button_save_ino" title="Save files"><i class="small material-icons">save</i></a></li>
+							<li style="display:none;><a href="#" id="button_toolbox" title="Show/Hide Category Menu"><i class="small material-icons">playlist_add_check</i></a></li>
+							<li style="display:none;><a href="#" id="button_addExtensionBlocks" title="Import extension custom blocks"><i class="material-icons">extension</i></a></li>
+							<li style="display:none;><a href="#" id="button_addRemoteBlocks" title="Import remote custom blocks"><i class="material-icons">note_add</i></a></li>
+							<li style="display:none;><a href="#" id="button_webSerial" title="Web Serial"><i class="small material-icons">usb</i></a></li>
+							<li style="display:none;><a href="#" id="button_webBluetooth" title="Web Bluetooth"><i class="small material-icons">bluetooth</i></a></li>
+							<li style="display:none;><a href="#" id="button_webMQTT" title="Web MQTT"><i class="small material-icons">bookmark</i></a>	</li>
+							<li style="display:none;><a href="#" id="button_tool" title="Open Developer Tool" style="display:none"><i class="small material-icons">build</i></a></li>
+							<li style="display:none;><a href="#" id="button_compiler title="Open Developer Tool" style="display:none"><i class="small material-icons">build</i></a></li>
+						</div>
+						<!--</ul>-->
+					</td>	
+					
+			<td style="width: 20vw; text-align:right;">
+    <div id="tabs_tools" style="font-size:28px; display: flex; align-items: center; gap: 10px;">
+    <select id="board-selector" style="margin:0;font-size:28px; display:none;"></select>
+    <select id="com-selector" style="margin:0;font-size:28px"></select>
+    <div style="text-align:right; padding-right: 2vw; flex-grow: 1;">
+        <span id="version-info" style="line-height: 3vw; font-size: 20px; white-space: nowrap;"></span>
+    </div>
+</div>
+</td>	
+			</table>
+		</div>
+	</div>
+	<div id="code_content" class="code_content"></div>
+	<div id="arduino_content" class="ui-widget-content" style="display:none;">
+		<div id="arduino_title" class="ui-widget-header">
+			<span id="title_code">Arduino Code</span>
+			<span class="contentzoom"><a href="#" id="button_copycode" title="Copy to clipboard"><i class="material-icons" style="vertical-align: middle; color: white;">featured_play_list</i></a></span>
+			<span class="contentzoom_right"><a onclick="contentZoom('arduino');" style="cursor: pointer" title="Show/Hide"><i class="material-icons" style="vertical-align: middle; color: white;">unfold_more</i></a></span>
+		</div>
+		<div id="arduino_code">
+			<section class="try">
+				<div class="container">
+					<div class="editor row">
+						<div class="span9">
+							<div class="editor-frame">
+								<div class="loading editor" style="display: none;">
+									<div class="progress progress-striped active">
+										<div class="bar"></div>
+									</div>
+								</div>
+								<div id="editor"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>		
+		</div>	
+	</div>
+	<div id="dialog_toolbox"></div>
+	<div id="dialog_putty" align="center">
+		<table>
+			<tr><td id="baudrate_title">序列埠鮑率 : </td><td id="baudrate"></td></tr>
+		</table>
+	</div>	
+	<div id="dialog_upload">
+		<textarea id="upload_code"></textarea>
+		<textarea id="upload_state"></textarea>	
+		<div id="verbose_option" style="display: flex; align-items: center; gap: 8px; justify-content: flex-end; margin-top: 10px;">
+						<label><input type="checkbox" id="show_verbose"> Show verbose</label>
+		</div>;			
+	</div>
+	<div id="dialog_webSerial" style="display:none">
+		<table>
+			<tr>
+				<td><span id="serial_baudrate">Baud Rate</span>
+				<select id="serial_baud">
+					<option value="9600">9600</option>
+					<option value="115200">115200</option>
+					<option value="300">300</option>
+					<option value="1200">1200</option>
+					<option value="2400">2400</option>
+					<option value="4800">4800</option>
+					<option value="19200">19200</option>
+					<option value="38400">38400</option>
+					<option value="57600">57600</option>
+					<option value="74880">74880</option>
+					<option value="230400">230400</option>
+					<option value="250000">250000</option>
+					<option value="500000">500000</option>
+					<option value="1000000">1000000</option>	
+					<option value="2000000">2000000</option>	
+				</select>
+				</td>
+				<td><button id="serial_close_port">Close Port</button><button id="serial_request_port">Select Port</button></td>
+			</tr>
+			<tr>
+				<td><input type="text" id="serial_command">
+				<select id="serial_end">
+					<option value=""></option>
+					<option value="\n">\n</option>
+				</select>
+				</td>
+				<td><button id="serial_sendString">Send String</button></td>
+			</tr>
+			<tr>
+				<td colspan="2"><div id="serial_status" style="width:500px;height:200px;border:2px black solid;overflow: auto;"></div></td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td align="right">
+				<button id="serial_clearStatus">Clear text</button>
+				</td>
+			</tr>
+		</table>
+	</div>	
+	<div id="dialog_webBluetooth" style="display:none">
+		<table>
+			<tr>
+				<td colspan="2" align="right"><button id="Bluetooth_disconnect_device">Disconnect</button><button id="Bluetooth_request_device">Connect to Bluetooth</button></td>
+			</tr>
+			<tr>
+				<td><span id="title_uuid_service">Service UUID</span></td><td><input type="text" id="Bluetooth_uuid_service" size="38" value="4fafc201-1fb5-459e-8fcc-c5c9c331914b"></td>
+				<tr>
+					<td><span id="title_uuid_tx">TX UUID</span></td><td><input type="text" id="Bluetooth_uuid_tx" size="38" value="beb5483e-36e1-4688-b7f5-ea07361b26a8"></td>
+					<tr>
+						<td><span id="title_uuid_rx">RX UUID</span></td><td><input type="text" id="Bluetooth_uuid_rx" size="38" value="498c599b-2601-4600-bb7e-3aa295a92842"></td>
+						<tr>
+							<td colspan="2"><input type="text" id="Bluetooth_command">
+								<select id="Bluetooth_end">
+									<option value=""></option>
+									<option value="\r">\r</option>		
+									<option value="\n">\n</option>	
+									<option value="\r\n">\r\n</option>	
+								</select>
+								<button id="Bluetooth_sendString">Send String</button>
+							</td>
+						</tr>
+					</tr>
+					<td colspan="2"><div id="Bluetooth_status" style="width:500px;height:120px;border:2px black solid;overflow: auto;"></div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="right">
+						<button id="Bluetooth_clearText">Clear Text</button>
+					</td>
+				</tr>
+			</tr>
+		</table>
+	</div>				
+</main>
+<div id="dialog-spinner-overlay">
+		  <div class="dialog-spinner" id="dialog-spinner"></div>
+		  	<div class="spinner-text" id="spinner-text"></div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/bootstrap.min.js" integrity="sha256-u+l2mGjpmGK/mFgUncmMcFKdMijvV+J3odlDJZSNUu8=" crossorigin="anonymous"></script>
+<script>
+// Monaco uses a custom amd loader that over-rides node's require.
+// Keep a reference to node's require so we can restore it after executing the amd loader file.
+var nodeRequire = require;
+</script>
+<script src="vs/loader.js"></script>
+<script>
+// Save Monaco's amd require and restore Node's require
+var amdRequire = require;
+require = nodeRequire;
+require.nodeRequire = require;
+</script>
+
+<script>
+amdRequire.config({
+baseUrl: ''
+});
+
+// workaround monaco-css not understanding the environment
+self.module = undefined;
+
+// workaround monaco-typescript not understanding the environment
+self.process.browser = true;
+</script>
+<script src="vs/editor/editor.main.nls.js"></script>
+<script src="vs/editor/editor.main.js"></script>
+<script src="vs/arduino.js"></script>
+<script>
+  window.onload = function() {
+    document.getElementById("version-info").innerText = "Ver: " + app_ver;
+  };
+</script>
+<script>
+ document.getElementById('button_download').addEventListener('click', function(event) {
+    // 取得目前語言
+    var lang = document.getElementById('lang-selector').value;
+
+    // 根據語言顯示對應訊息
+    var message = "";
+    if (lang === "en")
+    {
+        message = "Please save to the hub8735:bit USB drive\nMake sure the file is named flash_ntz.bin\nAfter downloading, confirm the file exists before pressing reset.";
+    }
+    else
+    {
+        message = "請儲存到hub8735:bit的USB磁碟機\n請確認檔案名稱為flash_ntz.bin\n下載後請確認檔案存在後再按reset";
+    }
+
+    alert(message);
+    });
+</script>
+<style>
+/* 遮罩層 */
+#dialog-spinner-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.4); /* 半透明白 */
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+/* Spinner 圈圈 */
+.dialog-spinner {
+	position: relative; /* 為了讓內部的 spinner-text 能定位 */
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spinner 動畫 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 顯示文字 */
+.spinner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  background: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace; /* 加這個會讓字寬一致 */
+  min-width: 3em;          /* 或依你最多幾個字決定寬度 */
+  text-align: center;
+}
+</style>
+</body>
+</html>

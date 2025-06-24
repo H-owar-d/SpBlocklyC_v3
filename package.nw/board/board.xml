@@ -1,0 +1,5 @@
+﻿<xml xmlns="https://developers.google.com/blockly/xml">
+	<board upload="ideasHatch:AmebaPro2:Ameba_HUB-8735_bit" name="HUB-8735:bit"></board>
+  <board upload="ideasHatch:AmebaPro2:Ameba_HUB-8735" name="HUB-8735"></board>
+  <board upload="ideasHatch:AmebaPro2:Ameba_HUB-8735_ultra" name="HUB-8735_ultra"></board>
+</xml>

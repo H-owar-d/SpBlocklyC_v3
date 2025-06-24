@@ -1,0 +1,12 @@
+Blockly.Msg["HUB_LED"] = "LED Control";
+Blockly.Msg["SHOWLED_SET"] = "Turn on ";
+Blockly.Msg["SHOWLED_CLEAR_XY"] = "Turn off ";
+Blockly.Msg["SHOWLED_SWITCH"] = "Toggle at ";
+Blockly.Msg["SHOWLED_STATUS"] = "LED status at ";
+Blockly.Msg["SHOWLED_LED_X"] = "x";
+Blockly.Msg["SHOWLED_LED_Y"] = "y";
+Blockly.Msg["SHOWLED_LED_0"] = "0";
+Blockly.Msg["SHOWLED_LED_1"] = "1";
+Blockly.Msg["SHOWLED_LED_2"] = "2";
+Blockly.Msg["SHOWLED_LED_3"] = "3";
+Blockly.Msg["SHOWLED_LED_4"] = "4";

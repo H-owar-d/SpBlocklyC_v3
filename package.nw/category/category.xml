@@ -1,0 +1,2082 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml xmlns="https://developers.google.com/blockly/xml">
+	<category id="category_hub8735bit_proskeipro" name="%{BKY_HUB_PROSKITPRO}">	
+	<category id="category_hub8735bit_basic" name="%{BKY_HUB_BASIC}" colour="210">
+		<block type="ShowLEDMatrix_number">
+			<value name="value_number_">
+	      <block type="math_number">
+	        <field name="NUM">1234567890</field>
+	      </block>
+	    </value>
+		</block>
+		<block type="ShowLEDMatrix">	
+					<field name="L01">FALSE</field>
+					<field name="L02">FALSE</field>
+					<field name="L03">FALSE</field>
+					<field name="L04">FALSE</field>
+					<field name="L05">FALSE</field>
+					<field name="L06">FALSE</field>
+					<field name="L07">FALSE</field>
+					<field name="L08">FALSE</field>
+					<field name="L09">FALSE</field>
+					<field name="L10">FALSE</field>
+					<field name="L11">FALSE</field>
+					<field name="L12">FALSE</field>
+					<field name="L13">FALSE</field>
+					<field name="L14">FALSE</field>
+					<field name="L15">FALSE</field>
+					<field name="L16">FALSE</field>
+					<field name="L17">FALSE</field>
+					<field name="L18">FALSE</field>
+					<field name="L19">FALSE</field>
+					<field name="L20">FALSE</field>
+					<field name="L21">FALSE</field>
+					<field name="L22">FALSE</field>
+					<field name="L23">FALSE</field>
+					<field name="L24">FALSE</field>
+					<field name="L25">FALSE</field>
+				</block>
+				<block type="ShowLEDMatrix_Icon">
+
+				</block>	
+				<block type="ShowLEDMatrix_String">
+					<value name="value_text_">
+								<block type="text">
+								  <field name="TEXT">HELLO</field>
+								</block>
+							</value>
+				</block>
+				<block type="ShowLEDMatrix_Clear">
+				</block>	
+				<block type="ShowLEDMatrix_Arrow">
+				</block>			
+	</category>	
+	<category id="category_hub8735bit_input" name="%{BKY_HUB_INPUT}" colour="300">
+		<block type="hub8735bit_button_if"></block>
+		<block type="hub8735bit_shake_if"></block>
+		<block type="hub8735bit_gpio_if"></block>
+		<block type="hub8735bit_button_condition"></block>
+		<block type="hub8735bit_shake_condition"></block>
+		<block type="hub8735bit_gpio_condition"></block>
+		<block type="hub8735bit_gsensor_value"></block>
+		<block type="hub8735bit_compass_value"></block>
+		<block type="hub8735bit_light_L_value"></block>
+		<block type="hub8735bit_light_R_value"></block>
+		<block type="hub8735bit_temperature_value"></block>
+	</category>	
+	<category id="category_hub8735bit_led" name="%{BKY_HUB_LED}" colour="268">
+		<block type="hub8735bit_led_set_xy"></block>
+		<block type="hub8735bit_led_switch_xy"></block>
+		<block type="hub8735bit_led_clr_xy"></block>
+		<block type="hub8735bit_led_status_xy"></block>
+	</category>
+	<category id="category_hub8735bit_ir_motor" name="%{BKY_HUB_IRMOTOR}" colour="28">
+		<block type="hub8735bit_blockly_ir_r_read"></block>
+		<block type="hub8735bit_blockly_ir_l_read"></block>
+		<block type="hub8735bit_blockly_ir_r_truefalse">
+			<value name="ir_r_number_">
+		      <block type="math_number">
+		        <field name="NUM">256</field>
+		      </block>
+	    </value>
+		</block>
+		<block type="hub8735bit_blockly_ir_l_truefalse">
+			<value name="ir_l_number_">
+	      <block type="math_number">
+	        <field name="NUM">256</field>
+	      </block>
+	    </value>
+		</block>
+		<block type="hub8735bit_blockly_go"></block>
+		<block type="hub8735bit_blockly_back"></block>
+		<block type="hub8735bit_blockly_stop"></block>
+		<block type="hub8735bit_blockly_turn_right"></block>
+		<block type="hub8735bit_blockly_turn_left"></block>
+		<block type="hub8735bit_blockly_stop_turn"></block>
+	</category>
+	<category id="buzzer" name="%{BKY_HUB_BUZZER}" colour="120">
+				<block type="hub8735bit_buzzer">
+					<value name="delaytime">
+						<block type="math_number">
+							<field name="NUM">500</field>
+						</block>
+					</value>
+				</block>			
+				<block type="hub8735bit_buzzer1">
+					<value name="frequency">
+						<block type="math_number">
+							<field name="NUM">261</field>
+						</block>
+					</value>
+					<value name="delaytime">
+						<block type="math_number">
+							<field name="NUM">500</field>
+						</block>
+					</value>
+				</block>
+				<block type="hub8735bit_buzzer_tone1">
+				</block>			
+				<block type="hub8735bit_buzzer1">
+					<value name="frequency">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text" id="117">
+							<field name="TEXT">392</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text" id="118">
+							<field name="TEXT">330</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+					<value name="delaytime">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text">
+							<field name="TEXT">1000</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text">
+							<field name="TEXT">500</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+				</block>
+				<block type="hub8735bit_buzzer1">
+					<value name="frequency">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text">
+							<field name="TEXT">392,330</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text" id="118">
+							<field name="TEXT">330,392</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+					<value name="delaytime">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text">
+							<field name="TEXT">1000,500</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text">
+							<field name="TEXT">500,1000</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+				</block>
+				<block type="hub8735bit_blockly_buzzer_control"></block>
+				<block type="hub8735bit_blockly_buzzer_control1"></block>
+				<!--<block type="hub8735bit_blockly_buzzer_control2"></block>-->
+			</category>
+	</category>
+	<sep id="category_sep"></sep>	
+	<!--IO Board part-->
+	<category id="category_hub8735bit_iob01" name="%{BKY_HUB_IOB01}">
+	<category id="category_Pins" name="%{BKY_AMB82_MINI_BOARD_PIN}" colour="360">
+			  <block type="amb82_mini_board_pins">			  
+			  </block>
+		</category>
+	<category id="category_fu_io" name="%{BKY_FU_IO}" colour="290">
+	  <block type="fu_io_pinmode">
+	    <value name="pin">
+	      <block type="math_number">
+	        <field name="NUM">2</field>
+	      </block>
+	    </value>  
+	    <field name="type"></field>
+	  </block>
+	  <block type="fu_io_write">
+	    <value name="pin">
+	      <block type="math_number">
+	        <field name="NUM">2</field>
+	      </block>
+	    </value>
+	    <value name="value">
+	      <block type="math_number">
+	        <field name="NUM">1</field>
+	      </block>
+	    </value>
+	  </block>
+	  <block type="fu_io_read">
+	    <value name="pin">
+	      <block type="math_number">
+	        <field name="NUM">2</field>
+	      </block>
+	    </value>
+	  </block>
+	</category>
+	<category id="category_hub8735bit_ir_motor" name="%{BKY_HUB_IOB01_IR}" colour="28">
+		<block type="hub8735bit_blockly_ir_r_read"></block>
+		<block type="hub8735bit_blockly_ir_l_read"></block>
+		<block type="hub8735bit_blockly_ir_r_truefalse">
+			<value name="ir_r_number_">
+		      <block type="math_number">
+		        <field name="NUM">256</field>
+		      </block>
+	    </value>
+		</block>
+		<block type="hub8735bit_blockly_ir_l_truefalse">
+			<value name="ir_l_number_">
+	      <block type="math_number">
+	        <field name="NUM">256</field>
+	      </block>
+	    </value>
+		</block>
+	</category>
+	<category id="buzzer_in" name="%{BKY_HUB_BUZZER_IN}" colour="120">
+				<block type="hub8735bit_buzzer_in">
+					<value name="delaytime">
+						<block type="math_number">
+							<field name="NUM">500</field>
+						</block>
+					</value>
+				</block>							
+				<block type="hub8735bit_buzzer_in1">
+					<value name="frequency">
+						<block type="math_number">
+							<field name="NUM">261</field>
+						</block>
+					</value>
+					<value name="delaytime">
+						<block type="math_number">
+							<field name="NUM">500</field>
+						</block>
+					</value>
+				</block>
+				<block type="hub8735bit_buzzer_tone1">
+				</block>			
+				<block type="hub8735bit_buzzer_in1">
+					<value name="frequency">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text" id="117">
+							<field name="TEXT">392</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text" id="118">
+							<field name="TEXT">330</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+					<value name="delaytime">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text">
+							<field name="TEXT">1000</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text">
+							<field name="TEXT">500</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+				</block>
+				<block type="hub8735bit_buzzer_in1">
+					<value name="frequency">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text">
+							<field name="TEXT">392,330</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text" id="118">
+							<field name="TEXT">330,392</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+					<value name="delaytime">
+					  <block type="array_create_with" inline="false">
+						<mutation items="2"></mutation>
+						<value name="ADD0">
+						  <block type="text">
+							<field name="TEXT">1000,500</field>
+						  </block>
+						</value>
+						<value name="ADD1">
+						  <block type="text">
+							<field name="TEXT">500,1000</field>
+						  </block>
+						</value>
+					  </block>
+					</value>
+				</block>
+				<block type="hub8735bit_blockly_buzzer_in_control"></block>
+				<block type="hub8735bit_blockly_buzzer_in_control1"></block>
+				<!--<block type="hub8735bit_blockly_buzzer_in_control2"></block>-->
+			</category>
+	</category>
+	<sep id="category_sep"></sep>
+	<category id="category_hub8735bit" name="%{BKY_HUB8735BIT}">
+	<category id="category_hub8735bit_basic" name="%{BKY_HUB_BASIC}" colour="210">
+		<block type="ShowLEDMatrix_number">
+			<value name="value_number_">
+	      <block type="math_number">
+	        <field name="NUM">1234567890</field>
+	      </block>
+	    </value>
+		</block>
+		<block type="ShowLEDMatrix">	
+					<field name="L01">FALSE</field>
+					<field name="L02">FALSE</field>
+					<field name="L03">FALSE</field>
+					<field name="L04">FALSE</field>
+					<field name="L05">FALSE</field>
+					<field name="L06">FALSE</field>
+					<field name="L07">FALSE</field>
+					<field name="L08">FALSE</field>
+					<field name="L09">FALSE</field>
+					<field name="L10">FALSE</field>
+					<field name="L11">FALSE</field>
+					<field name="L12">FALSE</field>
+					<field name="L13">FALSE</field>
+					<field name="L14">FALSE</field>
+					<field name="L15">FALSE</field>
+					<field name="L16">FALSE</field>
+					<field name="L17">FALSE</field>
+					<field name="L18">FALSE</field>
+					<field name="L19">FALSE</field>
+					<field name="L20">FALSE</field>
+					<field name="L21">FALSE</field>
+					<field name="L22">FALSE</field>
+					<field name="L23">FALSE</field>
+					<field name="L24">FALSE</field>
+					<field name="L25">FALSE</field>
+				</block>
+				<block type="ShowLEDMatrix_Icon">
+
+				</block>	
+				<block type="ShowLEDMatrix_String">
+					<value name="value_text_">
+								<block type="text">
+								  <field name="TEXT">HELLO</field>
+								</block>
+							</value>
+				</block>
+				<block type="ShowLEDMatrix_Clear">
+				</block>	
+				<block type="ShowLEDMatrix_Arrow">
+				</block>			
+	</category>	
+	<category id="category_hub8735bit_input" name="%{BKY_HUB_INPUT}" colour="300">
+		<block type="hub8735bit_button_if"></block>
+		<block type="hub8735bit_shake_if"></block>
+		<block type="hub8735bit_gpio_if"></block>
+		<block type="hub8735bit_button_condition"></block>
+		<block type="hub8735bit_shake_condition"></block>
+		<block type="hub8735bit_gpio_condition"></block>
+		<block type="hub8735bit_gsensor_value"></block>
+		<block type="hub8735bit_compass_value"></block>
+		<block type="hub8735bit_light_L_value"></block>
+		<block type="hub8735bit_light_R_value"></block>
+		<block type="hub8735bit_temperature_value"></block>
+	</category>	
+	<category id="category_hub8735bit_led" name="%{BKY_HUB_LED}" colour="268">
+		<block type="hub8735bit_led_set_xy"></block>
+		<block type="hub8735bit_led_switch_xy"></block>
+		<block type="hub8735bit_led_clr_xy"></block>
+		<block type="hub8735bit_led_status_xy"></block>
+	</category>
+	<sep id="category_sep"></sep>
+	<category id="category_ntpserver" name="%{BKY_NTPSERVER}" colour="220">
+	  <block type="amb82_mini_ntpserver_initial">
+		<value name="gmtOffset">
+		  <block type="math_number">
+			<field name="NUM">8</field>
+		  </block>
+		</value> 
+	  </block>
+	  <block type="amb82_mini_ntpserver_getlocaltime">		
+	  </block>
+	  <block type="amb82_mini_ntpserver_get">
+	  </block>
+	</category>	
+	<category id="category_utp" name="%{BKY_UDP}" colour="120">
+		  <block type="udp_initial">
+			<value name="port">
+			  <block type="math_number">
+				<field name="NUM">2390</field>
+			  </block>
+			</value>		  
+		  </block>
+		  <block type="udp_get">		
+		  </block>
+		  <block type="udp_write">
+			<value name="ip">
+			  <block type="text">
+				<field name="TEXT"></field>
+			  </block>
+			</value>		  
+			<value name="port">
+			  <block type="math_number">
+				<field name="NUM">2390</field>
+			  </block>
+			</value>
+			<value name="data">
+			  <block type="text">
+				<field name="TEXT"></field>
+			  </block>
+			</value>			
+		  </block>		  
+		</category>
+	<sep id="category_sep"></sep>
+		<category id="category_video" name="%{BKY_HUB8735_VIDEO}" colour="170">				
+			  <block type="amb82_mini_video_initial">
+					<value name="width">
+					  <block type="math_number">
+							<field name="NUM">640</field>
+					  </block>
+					</value>
+					<value name="height">
+					  <block type="math_number">
+							<field name="NUM">480</field>
+					  </block>
+					</value>					
+			  </block>
+			  <block type="amb82_mini_video_settings">
+					<value name="val">
+					  <block type="math_number">
+							<field name="NUM">0</field>
+					  </block>
+					</value>			  
+			  </block>
+			  <block type="amb82_mini_video_settings_bitrate">
+					<value name="val">
+						<block type="text">
+							<field name="TEXT">2 * 1024 * 1024</field>
+						</block>
+					</value>			  
+			  </block>
+			  <block type="amb82_mini_video_getstill">			  
+			  </block>			  
+			  <block type="amb82_mini_usb_uvcd">			  
+			  </block>				  
+			  <block type="amb82_mini_draw_createBitmap">			  
+			  </block>			  
+			  <block type="amb82_mini_drawline">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>						
+			  </block>
+			  <block type="amb82_mini_drawpoint">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="pointwidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawrect">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawtext">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="txt">
+					  <block type="text">
+						<field name="TEXT"></field>
+					  </block>    
+					</value> 
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block>			  
+			  <block type="amb82_mini_video_capture_sd">
+					<value name="filename">
+						<block type="text">
+							<field name="TEXT">1</field>
+						</block>
+					</value>			  
+			  </block>
+			  <block type="amb82_mini_linenotify">		
+					<value name="linetoken">
+					  <block type="text">
+						<field name="TEXT"></field>
+					  </block>
+					</value>
+					<value name="linemessage">
+					  <block type="text">
+						<field name="TEXT"></field>
+					  </block>
+					</value>					
+			  </block>
+			  <block type="amb82_mini_telegram">
+				<value name="token">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="chatid">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>				
+			  </block>			  
+			  <block type="amb82_mini_googledrive">
+				<value name="scriptid">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="foldername">
+				  <block type="text">
+					<field name="TEXT">Ameba</field>
+				  </block>
+				</value>
+				<value name="filename">
+				  <block type="text">
+					<field name="TEXT">Ameba</field>
+				  </block>
+				</value>
+				<value name="linetoken">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="lineuserid">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>				
+			  </block>
+			  <block type="amb82_mini_openai_vision">
+				<value name="key">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="message">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>				
+			  </block>
+			  <block type="amb82_mini_gemini_vision">
+				<value name="key">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="message">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>				
+			  </block>
+			  <block type="amb82_mini_custom_vision">
+				<value name="domain">
+				  <block type="text">
+					<field name="TEXT">api.groq.com</field>
+				  </block>
+				</value>
+				<value name="path">
+				  <block type="text">
+					<field name="TEXT">/openai/v1/chat/completions</field>
+				  </block>
+				</value>				
+				<value name="model">
+				  <block type="text">
+					<field name="TEXT">meta-llama/llama-4-scout-17b-16e-instruct</field>
+				  </block>
+				</value>			  
+				<value name="key">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="message">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>				
+			  </block>			  
+			<block type="amb82_mini_spreadsheet"> 
+				<value name="spreadsheeturl">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value> 
+				<value name="spreadsheetname">
+				  <block type="text">
+				  <field name="TEXT">work sheet</field>
+				  </block>
+				</value> 
+				<value name="column">
+				  <block type="math_number">
+					<field name="NUM">1</field>
+				  </block>
+				</value> 
+				<value name="row">
+				  <block type="math_number">
+					<field name="NUM">1</field>
+				  </block>
+				</value>	  
+				<value name="spreadsheet_script">
+				  <block type="text">
+					<field name="TEXT"></field>
+					<!-- https://script.google.com/macros/s/AKfycbysXORTz1fwTtjKKDakgjo1NKztyRam2B2NNvx72iq2FWWdGssa3ihhxGk1ZkQmy4ao-A/exec -->				  
+				  </block>
+				</value> 
+			</block>			  
+			  <block type="fu_mqtt_sendimage">
+				<value name="topic">
+				  <block type="text">
+					<field name="TEXT">yourtopic/data</field>
+				  </block>
+				</value>
+				<field name="board">HUB 8735 ultra</field>
+			  </block>				  
+		</category>	
+		<category id="category_rtsp" name="%{BKY_HUB8735_RTSP}" colour="320">
+			  <block type="amb82_mini_rtsp">
+			  </block>
+		</category>
+		<category id="category_rtp" name="%{BKY_HUB8735_RTP}" colour="270">				
+			  <block type="amb82_mini_rtp_audio">
+			  </block>
+		</category>
+		<category id="category_mp4_record" name="%{BKY_MP4_RECORD}" colour="70">				
+			  <block type="amb82_mini_mp4_initial">
+					<value name="fileduration">
+					  <block type="math_number">
+							<field name="NUM">30</field>
+					  </block>
+					</value> 
+					<value name="filecount">
+					  <block type="math_number">
+							<field name="NUM">1</field>
+					  </block>
+					</value> 			  
+					<value name="filename">
+						<block type="text">
+							<field name="TEXT">recordMP4</field>
+						</block>
+					</value>					  
+			  </block>
+			  <block type="amb82_mini_mp4_state">		  
+			  </block>					  
+	</category>
+	<sep id="category_sep"></sep>
+	<category id="category_Gtimer" name="%{BKY_AMB82_MINI_GTIMER}" colour="40">				
+			  <block type="amb82_mini_gtimer_initial">
+			  		<value name="interval_">
+					  <block type="math_number">
+						<field name="NUM">1</field>
+					  </block>
+					</value>
+			  </block>	
+			  <block type="amb82_mini_gtimer_function">
+			  </block>			  
+	</category>
+	<category id="category_DeepSleep" name="%{BKY_AMB82_MINI_DEEPSLEEP_INITIAL}" colour="190">
+			  <block type="amb82_mini_deepsleep_initial">
+			  		<value name="days_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+			  		<value name="hours_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+			  		<value name="minutes_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>					
+			  		<value name="seconds_">
+					  <block type="math_number">
+						<field name="NUM">10</field>
+					  </block>
+					</value>					
+			  </block>	
+			  <block type="amb82_mini_deepsleep_start">
+			  </block>
+		</category>
+		<category id="category_Interrupt" name="%{BKY_AMB82_MINI_INTERRUPT}" colour="80">
+			<block type="amb82_mini_interrupt">
+				<value name="pin_">
+				  <block type="math_number">
+					<field name="NUM">21</field>
+				  </block>
+				</value>
+			</block>	
+		</category>
+		<category id="category_rtc" name="%{BKY_AMB82_MINI_RTC}" colour="220">
+			<block type="amb82_mini_rtc_initial">
+			  		<value name="year_">
+					  <block type="math_number">
+						<field name="NUM">2025</field>
+					  </block>
+					</value>
+			  		<value name="month_">
+					  <block type="math_number">
+						<field name="NUM">1</field>
+					  </block>
+					</value>					
+			  		<value name="day_">
+					  <block type="math_number">
+						<field name="NUM">1</field>
+					  </block>
+					</value>
+			  		<value name="hour_">
+					  <block type="math_number">
+						<field name="NUM">12</field>
+					  </block>
+					</value>
+			  		<value name="minute_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>					
+			  		<value name="second_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+			</block>
+			<block type="amb82_mini_rtc_enablealarm">
+			  		<value name="days_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+			  		<value name="hours_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+			  		<value name="minutes_">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>					
+			  		<value name="seconds_">
+					  <block type="math_number">
+						<field name="NUM">10</field>
+					  </block>
+					</value>
+			</block>
+			<block type="amb82_mini_rtc_disablealarm">
+			</block>	
+			<block type="amb82_mini_rtc_gettime">
+			</block>			
+		</category>			
+		<category id="category_Flashmemory" name="%{BKY_AMB82_MINI_FLASHMEMORY}" colour="80">				
+		  <block type="amb82_mini_flashmemory_write">
+			<value name="address">
+			  <block type="text">
+				<field name="TEXT">0x1E00</field>
+			  </block>
+			</value>		  
+			<value name="val">
+			  <block type="math_number">
+				<field name="NUM"></field>
+			  </block>
+			</value>			
+		  </block>
+		  <block type="amb82_mini_flashmemory_read">
+			<value name="address">
+			  <block type="text">
+				<field name="TEXT">0x1E00</field>
+			  </block>
+			</value>			
+		  </block>			  
+		</category>
+		<category id="category_file_system" name="%{BKY_FILE_SYSTEM}" colour="340">
+			<block type="amb82_mini_sd_initial">			
+			</block>
+			<block type="amb82_mini_sd_folder">
+				<value name="foldername">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			
+			</block>			
+			<block type="amb82_mini_folder">
+				<value name="foldername">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			
+			</block>	
+			<block type="amb82_mini_file_open">
+				<value name="filename">
+				  <block type="text">
+					<field name="TEXT">test.txt</field>
+				  </block>
+				</value>			
+			</block>
+			<block type="amb82_mini_file_remove">
+				<value name="filename">
+				  <block type="text">
+					<field name="TEXT">test.mp4</field>
+				  </block>
+				</value>			
+			</block>			
+			<block type="amb82_mini_file_write">
+				<value name="content">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			
+			</block>	
+			<block type="amb82_mini_file_read">
+				<value name="buf">
+				  <block type="math_number">
+					<field name="NUM">128</field>
+				  </block>
+				</value>			
+			</block>
+			<block type="amb82_mini_file_read_char">			
+			</block>
+			<block type="amb82_mini_file_read_char_get">			
+			</block>
+			<block type="amb82_mini_file_play">
+				<value name="filename_">
+				  <block type="text">
+					<field name="TEXT">test</field>
+				  </block>
+				</value>
+				<field name="volume_">80</field>
+			</block>
+			<block type="amb82_mini_file_googletts">
+				<value name="message_">
+				  <block type="text">
+					<field name="TEXT">Hello World</field>
+				  </block>
+				</value>
+				<value name="filename_">
+				  <block type="text">
+					<field name="TEXT">test</field>
+				  </block>
+				</value>
+				<field name="language_">zh-TW</field>
+			</block>
+			<block type="amb82_mini_file_openai_whisper">
+				<value name="key_">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			
+				<value name="filename_">
+				  <block type="text">
+					<field name="TEXT">test.mp4</field>
+				  </block>
+				</value>
+			</block>
+			<block type="amb82_mini_file_groq_whisper">
+				<value name="key_">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			
+				<value name="filename_">
+				  <block type="text">
+					<field name="TEXT">test.mp4</field>
+				  </block>
+				</value>
+			</block>			
+			<block type="amb82_mini_file_gemini_stt">
+				<value name="key_">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="message_">
+				  <block type="text">
+					<field name="TEXT">Please convert the audio content into text.</field>
+				  </block>
+				</value>				
+				<value name="filename_">
+				  <block type="text">
+					<field name="TEXT">test.mp4</field>
+				  </block>
+				</value>
+				<field name="mimetype_">audio/mp4</field>
+			</block>			
+			<block type="amb82_mini_folder_list">
+				<value name="foldername">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			
+			</block>
+			<block type="amb82_mini_folder_list_attribute">			
+			</block>			
+	</category>
+	<sep id="category_sep"></sep>	
+	<category id="category_linkit_wifi" name="Wi-Fi" colour="0">
+		<block type="esp32_wifi_wait_until_ready">
+			<value name="SSID">
+			  <block type="text">
+				<field name="TEXT">teacher</field>
+			  </block>
+			</value>
+			<value name="PASSWORD">
+			  <block type="text">
+				<field name="TEXT">12345678</field>
+			  </block>
+			</value> 		
+		  </block>
+		  <block type="esp32_wifi_settings">
+			<value name="SSID">
+			  <block type="text">
+				<field name="TEXT">teacher</field>
+			  </block>
+			</value>
+			<value name="PASSWORD">
+			  <block type="text">
+				<field name="TEXT">12345678</field>
+			  </block>
+			</value> 		
+		  </block>	  
+		  <block type="esp32_wifi_disconnect">		
+		  </block>	 
+		  <block type="esp32_wifi_reconnect">		
+		  </block>
+		  <block type="esp32_wifi_status">	
+		  </block>		  
+		  <block type="esp32_wifi_localip">	
+		  </block>
+		  <block type="ip_format">
+			<value name="ip">
+			  <block type="text">
+				<field name="TEXT"></field>
+			  </block>
+			</value> 		  
+		 </block>
+	</category>
+	<category id="category_fu_serial" name="%{BKY_FU_SERIAL}" colour="60">
+		<block type="fu_serial_begin_select">
+			<field name="baudrate">115200</field>
+		</block>	
+		<block type="fu_serial_begin">
+			<value name="baudrate">
+				<shadow type="math_number">
+					<field name="NUM">115200</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="fu_serial_begin_config">
+			<field name="config">SERIAL_8N1</field>
+			<value name="baudrate">
+				<shadow type="math_number">
+					<field name="NUM">115200</field>
+				</shadow>
+			</value>
+		</block>					
+		<block type="fu_serial_print">
+			<value name="data">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="fu_serial_println">
+			<value name="data">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="fu_serial_newline">
+		</block>			
+		<block type="fu_serial_ready"></block>
+		<block type="fu_serial_end"></block>
+
+		<block type="fu_serial_print_format">
+			<field name="format">BIN</field>
+			<value name="data">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="fu_serial_println_format">
+			<field name="format">BIN</field>
+			<value name="data">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="fu_serial_write">
+			<value name="data">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="fu_serial_write_format">
+			<field name="format">BIN</field>
+			<value name="data">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>		
+	</category>
+	<sep id="category_sep"></sep>
+	<category id="category_AI" name="%{BKY_HUB_AI}">
+	<category id="category_QRCode" name="%{BKY_HUB_QRCODE}" colour="130">
+			  <block type="amb82_mini_video_qrcode">		  
+			  </block>				  
+	</category>
+	<category id="amb82_mini_ObjectDetection_RTPS" name="%{BKY_AMB82_MINI_OBJECTDETECTION}" colour="330">				
+			  <block type="amb82_mini_objectdetection_rtsp">		  
+			  </block>
+			  <block type="amb82_mini_objectdetection_rtsp_rect">		  
+			  </block> 
+			  <block type="amb82_mini_objectdetection_rtsp_objectname">
+				<value name="objclass">
+					<block type="text">
+						<field name="TEXT"></field>
+					</block>
+				</value>			  
+			  </block> 			  
+			  
+			  <block type="amb82_mini_objectdetection_rtsp_count">		  
+			  </block>
+			  <block type="amb82_mini_objectdetection_rtsp_object">		  
+			  </block>
+			  <block type="amb82_mini_objectdetection_rtsp_object_char">		  
+			  </block>
+			  <block type="amb82_mini_objectdetection_rtsp_object_custom">
+				<mutation items="0"></mutation>		  
+			  </block>
+			  
+			  <block type="amb82_mini_objectdetection_state">	  
+			  </block>	  
+			  <block type="amb82_mini_xy_in_triangle">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x2">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y2">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x3">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y3">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>					
+			  </block>
+			  <block type="amb82_mini_xy_in_quadrilateral">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x2">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y2">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x3">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y3">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x4">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y4">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>					
+			  </block> 			  
+			  <block type="amb82_mini_drawline">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>						
+			  </block>
+			  <block type="amb82_mini_drawpoint">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="pointwidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawrect">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawtext">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="txt">
+					  <block type="text">
+						<field name="TEXT"></field>
+					  </block>    
+					</value> 
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block>			  
+		</category>
+		<category id="amb82_mini_FaceDetection" name="%{BKY_AMB82_MINI_FACEDETECTION}" colour="170">				
+			  <block type="amb82_mini_facedetection_rtsp">		  
+			  </block>
+			  <block type="amb82_mini_facedetection_rtsp_rect">		  
+			  </block> 
+			  <block type="amb82_mini_facedetection_rtsp_point">		  
+			  </block> 			  
+			  <block type="amb82_mini_facedetection_rtsp_count">		  
+			  </block> 
+			  <block type="amb82_mini_drawline">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>						
+			  </block>
+			  <block type="amb82_mini_drawpoint">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="pointwidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawrect">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawtext">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="txt">
+					  <block type="text">
+						<field name="TEXT"></field>
+					  </block>    
+					</value> 
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block>	
+			  -->
+		</category>
+		<category id="amb82_mini_FaceRecognition" name="%{BKY_AMB82_MINI_FACEDETECTIONRECOGNITION}" colour="170">				
+			  <block type="amb82_mini_facedetectionrecognition_rtsp">		  
+			  </block>
+			  <block type="amb82_mini_facedetectionrecognition_rtsp_rect">		  
+			  </block>
+			  <block type="amb82_mini_facedetectionrecognition_rtsp_notunknown">		  
+			  </block> 			  
+			  <block type="amb82_mini_facedetectionrecognition_rtsp_count">		  
+			  </block> 
+			  <block type="amb82_mini_facedetectionrecognition_rtsp_action">
+				<value name="regname">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value> 			  
+			  </block> 			  
+			  <block type="amb82_mini_drawline">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>						
+			  </block>
+			  <block type="amb82_mini_drawpoint">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="pointwidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawrect">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawtext">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="txt">
+					  <block type="text">
+						<field name="TEXT"></field>
+					  </block>    
+					</value> 
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+		</category>
+		<category id="amb82_mini_MotionDetection" name="%{BKY_AMB82_MINI_MOTIONDETECTION}" colour="180">
+			  <block type="amb82_mini_motiondetection_rtsp">		  
+			  </block>
+			  <block type="amb82_mini_motiondetection_rtsp_rect">		  
+			  </block> 			  
+			  <block type="amb82_mini_motiondetection_rtsp_count">		  
+			  </block>
+			  <block type="amb82_mini_drawline">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>						
+			  </block>
+			  <block type="amb82_mini_drawpoint">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="pointwidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawrect">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="x1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y1">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="linewidth">
+					  <block type="math_number">
+						<field name="NUM">3</field>
+					  </block>
+					</value>
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 
+			  <block type="amb82_mini_drawtext">
+					<value name="x">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="y">
+					  <block type="math_number">
+						<field name="NUM">0</field>
+					  </block>
+					</value>
+					<value name="txt">
+					  <block type="text">
+						<field name="TEXT"></field>
+					  </block>    
+					</value> 
+					<value name="alpha">
+					  <block type="math_number">
+						<field name="NUM">255</field>
+					  </block>
+					</value>
+			  </block> 			  
+		</category>	
+		<category id="amb82_mini_AudioClassification" name="%{BKY_AMB82_MINI_AUDIOCLASSIFICATION}" colour="90">				
+			  <block type="amb82_mini_audioclassification">		  
+			  </block>
+			  <block type="amb82_mini_audioclassification_get">		  
+			  </block>
+			  <block type="amb82_mini_audioclassification_object_name">
+				<value name="audioclass">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			  
+			  </block>
+			  <block type="amb82_mini_audioclassification_count">		  
+			  </block>
+			  <block type="amb82_mini_audioclassification_object">		  
+			  </block>  			  
+		</category>	
+		<category id="amb82_mini_ImageClassification" name="%{BKY_AMB82_MINI_IMAGECLASSIFICATION}" colour="290">				
+			  <block type="amb82_mini_imageclassification">		  
+			  </block>		  
+			  <block type="amb82_mini_imageclassification_get">		  
+			  </block> 
+			  <block type="amb82_mini_imageclassification_class_name">
+				<value name="property">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			  
+			  </block>			  
+		</category>	
+		<category id="amb82_mini_EmotionClassification" name="%{BKY_AMB82_MINI_EMOTIONCLASSIFICATION}" colour="330">				
+			  <block type="amb82_mini_emotionclassification_rtsp">		  
+			  </block>
+			  <block type="amb82_mini_emotionclassification_rtsp_get">		  
+			  </block>			  
+			  <block type="amb82_mini_emotionclassification_rtsp_emotion_name">
+				<value name="emption">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>			  
+			  </block> 			  
+			  <block type="amb82_mini_emotionclassification_rtsp_count">		  
+			  </block>			  
+			  <block type="amb82_mini_emotionclassification_rtsp_emotion">		  
+			  </block>			  
+		</category>
+		<category id="hub8735bit_openai" name="%{BKY_HUB_OPENAI}" colour="330">
+			<block type="hub8735bit_openai_init">
+				<value name="value_api_key_">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<value name="value_system_prompt_">
+				  <block type="text">
+					<field name="TEXT">System prompt</field>
+				  </block>
+				</value>
+			</block>
+			<block type="hub8735bit_openai_sendmsg">
+				<value name="chat_data_">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+			</block>
+			<block type="hub8735bit_openai_clearmsg"></block>
+			<block type="hub8735bit_openai_reponsemsg"></block>
+			<block type="hub8735bit_openai_tts"></block>
+			<block type="hub8735bit_openai_tts2"></block>
+			<block type="hub8735bit_openai_stt_file">
+				<value name="stt_data_">
+				  <block type="text">
+					<field name="TEXT"></field>
+				  </block>
+				</value>
+				<statement name="do_stt">
+			    <block type="fu_serial_println">
+			    	<value name="data">
+							<block type="hub8735bit_openai_stt">
+			    		</block>
+			    	</value>
+					</block>			    
+  			</statement>
+			</block>
+		</category>
+		</category>
+		</category>
+	<sep id="category_sep"></sep>	
+	<category id="category_loops" name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
+		<block type="controls_repeat_ext">
+			<value name="TIMES">
+				<block type="math_number">
+					<field name="NUM">5</field>
+				</block>
+			</value>
+		</block>
+		<block type="controls_whileUntil"></block>
+		<block type="controls_for">
+			<value name="FROM">
+				<block type="math_number">
+					<field name="NUM">1</field>
+				</block>
+			</value>
+			<value name="TO">
+				<block type="math_number">
+					<field name="NUM">5</field>
+				</block>
+			</value>
+			<value name="BY">
+				<block type="math_number">
+					<field name="NUM">1</field>
+				</block>
+			</value>
+		</block>
+		<!--	
+		<block type="controls_forEach"></block>
+		-->
+		<block type="controls_flow_statements"></block>			
+	</category>
+	<category id="category_logic" name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
+		<block type="controls_if"></block>
+		<block type="controls_switch">
+			<value name="VALUE">
+				<block type="variables_get">
+					<field name="VAR"></field>
+				</block>
+			</value>
+			<value name="CASE0">
+				<block type="text_quotationmark">
+				</block>
+			</value>				
+		</block>
+		<block type="logic_compare"></block>
+		<block type="logic_operation"></block>
+		<block type="logic_negate"></block>
+		<block type="logic_boolean"></block>
+		<block type="logic_null"></block>
+		<block type="logic_ternary"></block>
+		<block type="text_isEmpty">
+			<value name="VALUE">
+			</value>
+		</block>			
+	</category>
+	<category id="category_cast" name="%{BKY_CATCAST}" colour="250">
+		<block type="cast_number"></block>
+		<block type="cast_type"></block>
+		<block type="cast_type1"></block>
+	</category>
+	<category id="category_variables" custom="VARIABLE" name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}"></category>
+	<category id="category_math" name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
+		<block type="math_number"></block>
+		<block type="math_change">
+			<value name="VAR">
+				<block type="variables_get">
+					<field name="VAR"></field>
+				</block>
+			</value>
+			<value name="DELTA">
+				<block type="math_number">
+					<field name="NUM">1</field>
+				</block>
+			</value>
+		</block>
+		<block type="math_arithmetic"></block>
+		<block type="math_single"></block>
+		<!--				
+		<block type="math_constrain"></block>
+		-->					
+		<block type="math_pow"></block>
+		<block type="math_random_max_min"></block>
+		<block type="math_map_int"></block>
+		<!--			
+		<block type="math_map_float"></block>
+		-->				
+		<block type="math_degree_to_radian"></block>
+		<block type="math_radian_to_degree"></block>			
+	</category>
+	<category id="category_procedures" custom="PROCEDURE" name="%{BKY_CATPROCEDURES}" colour="%{BKY_PROCEDURES_HUE}"></category>
+	<category id="category_lists" name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
+		<block type="lists_create_with">
+			<mutation items="0"></mutation>
+		</block>
+		<block type="lists_create_with"></block>
+		<!--
+		<block type="lists_repeat">
+			<value name="NUM">
+				<block type="math_number">
+					<field name="NUM">5</field>
+				</block>
+			</value>
+		</block>
+		-->
+		<block type="lists_length"></block>
+		<block type="lists_isEmpty"></block>
+		<block type="lists_indexOf">
+			<value name="VALUE">
+				<block type="variables_get">
+					<field name="VAR"></field>
+				</block>
+			</value>
+			<value name="FIND">
+				<block type="math_number">
+					<field name="NUM">0</field>
+				</block>
+			</value>				
+		</block>
+		<block type="lists_getIndex">
+			<value name="VALUE">
+				<block type="variables_get">
+					<field name="VAR"></field>
+				</block>
+			</value>
+			<value name="AT">
+				<block type="math_number">
+					<field name="NUM">0</field>
+				</block>
+			</value>					
+		</block>
+		<block type="lists_setIndex">
+			<value name="LIST">
+				<block type="variables_get">
+					<field name="VAR"></field>
+				</block>
+			</value>
+			<value name="AT">
+				<block type="math_number">
+					<field name="NUM">0</field>
+				</block>
+			</value>					
+		</block>
+		<!--			
+		<block type="lists_getSublist">
+			<value name="LIST">
+				<block type="variables_get">
+					<field name="VAR">item</field>
+				</block>
+			</value>
+			<value name="AT1">
+				<block type="math_number">
+					<field name="NUM">0</field>
+				</block>
+			</value>	
+			<value name="AT2">
+				<block type="math_number">
+					<field name="NUM">0</field>
+				</block>
+			</value>					
+		</block>
+		<block type="lists_split">
+			<value name="DELIM">
+				<block type="text">
+					<field name="TEXT">,</field>
+				</block>
+			</value>
+		</block>
+		<block type="lists_sort"></block>
+		-->			
+	</category>
+	<category id="category_texts" name="%{BKY_CATTEXTS}" colour="%{BKY_TEXTS_HUE}">
+		<block type="text"></block>
+		<block type="text_join"></block>
+		<block type="text_append">
+			<value name="TEXT">
+				<block type="text"></block>
+			</value>
+		</block>
+		<block type="text_replace">
+			<value name="FROM">
+				<block type="text">
+					<field name="TEXT"></field>
+				</block>			
+			</value>
+			<value name="TO">
+				<block type="text">
+					<field name="TEXT"></field>
+				</block>
+			</value>
+		</block>		
+		<block type="text_length">
+			<value name="VALUE">
+			</value>
+		</block>					
+		<block type="text_indexOf">
+			<value name="VALUE">
+			</value>
+			<value name="FIND">
+				<block type="text">
+					<field name="TEXT"></field>
+				</block>
+			</value>
+		</block>
+		<block type="text_with">
+			<value name="VALUE">			
+			</value>
+			<value name="FIND">
+				<block type="text">
+					<field name="TEXT"></field>
+				</block>				
+			</value>				
+		</block>		
+		<block type="text_charAt">
+			<value name="VALUE">
+			</value>
+		</block>
+		<block type="text_getSubstring">
+			<value name="STRING">
+			</value>
+		</block>		
+		<block type="text_quotationmark"></block>
+		<!--	
+		<block type="text_changeCase">
+			<value name="TEXT">
+				<block type="text">
+					<field name="TEXT">abc</field>
+				</block>
+			</value>
+		</block>
+		<block type="variable_changeCase">
+			<field name="VAR">item</field>
+		</block>		
+		<block type="text_trim">
+			<value name="TEXT">	
+				<block type="variables_get">
+					<field name="VAR"></field>
+				</block>
+			</value>
+		</block>					
+		<block type="text_print">
+			<value name="TEXT">
+				<block type="text">
+					<field name="TEXT">abc</field>
+				</block>
+			</value>
+		</block>
+		<block type="text_prompt_ext">
+			<value name="TEXT">
+				<block type="text">
+					<field name="TEXT">abc</field>
+				</block>
+			</value>
+		</block>
+		-->					
+	</category>
+	<category id="category_time" name="%{BKY_HUB_BLOCKLY_TIME}" colour="90">
+		<block type="delay_custom">
+			<value name="DELAY_TIME">
+				<block type="math_number">
+					<field name="NUM">1000</field>
+				</block>
+			</value>
+		</block>
+		<block type="delayMicroseconds_custom">
+			<value name="DELAY_TIME">
+				<block type="math_number">
+					<field name="NUM">1000</field>
+				</block>
+			</value>
+		</block>
+	</category>
+		<sep id="category_sep"></sep>	
+		<category id="catMyBackPack" name="%{BKY_MYBACKPACK_TITLE}" colour="290"  custom="MYBACKPACK"></category>
+</xml>

@@ -192,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('lang-selector').value = lang;
 	}
 			
-	//changeLanguage();
 	
 	//載入工具箱目錄
 	$.ajax({
@@ -1279,7 +1278,7 @@ function startUploading2(inoPath) {
 		}
 	}
 	updateMsg();
-	changeLanguage();
+	
 /* 無法辨識 download 結束
 	const downloadLink = document.querySelector('a[download]');
 	downloadLink.addEventListener('click',function()

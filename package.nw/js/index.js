@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	//載入語言選單
 	//chrome.storage.local.get(['LANG'], function(item) {
-	localStorage.getItem(['LANG'], function(item) {
+/*	localStorage.getItem(['LANG'], function(item) {
 		lang = item.LANG?item.LANG:"zh-hant";
 		
 		if (typeof language != "undefined") {
@@ -172,8 +172,27 @@ document.addEventListener('DOMContentLoaded', function() {
 				select.add(new Option(language[i][2], language[i][0]));
 			}	
 			document.getElementById('lang-selector').value = lang;
-		}			
+		}
 	});	
+*/
+	var lang = localStorage.getItem('LANG') || "zh-hant";
+	if (typeof language != "undefined") {
+    for (var i = 0; i < language.length; i++) {
+        if (language[i][0] == lang) {
+            addScript(language[i][1]);
+        }
+    }
+    addScript(languageList);
+
+    var select = document.getElementById('lang-selector');
+    for (var i = 0; i < language.length; i++) {
+        select.add(new Option(language[i][2], language[i][0]));
+    }
+
+    document.getElementById('lang-selector').value = lang;
+	}
+			
+	
 	
 	//載入工具箱目錄
 	$.ajax({
@@ -1843,22 +1862,28 @@ const sourceFilePath = path.join('123', 'arduino-1.8.19', 'portable', 'packages'
   		window.open("https://fustyles.github.io/webduino/mqtt_basic_page.html")
     }); 	
 	
+	function setLang(lang, callback) {
+    localStorage.setItem('LANG', lang);
+    if (callback) callback();
+	}
+	
 	//切換語言
 	document.getElementById('lang-selector').onchange = function () {
-		if (this.selectedIndex!=-1) 
+		if (this.selectedIndex!=-1) {
 			lang = this.options[this.selectedIndex].value;
 		//chrome.storage.local.set({'LANG': lang}, function() {
+		setLang(lang, function() {
+		  console.log('store language setting to ' + lang);
+		  changeLanguage();
+		});
+/*		
 		localStorage.getItem({'LANG': lang}, function() {
 			console.log('store language setting to ' + lang);
 			changeLanguage();
-			/*
-			var result = confirm(Blockly.Msg.RELOAD_TITLE);
-			if (result) {
-				chrome.runtime.reload();
-			}
-			*/
 		});
-	}
+*/
+		}
+	};
 	
 	//切換語言
 	function changeLanguage() {

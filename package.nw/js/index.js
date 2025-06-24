@@ -1,4 +1,4 @@
-﻿¿/*
+﻿/*
 @license
 Copyright 2022 Taiwan (ChungYi Fu)
 SPDX-License-Identifier: Apache-2.0

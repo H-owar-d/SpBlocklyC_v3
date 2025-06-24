@@ -1,4 +1,4 @@
-﻿/*
+﻿¿/*
 @license
 Copyright 2022 Taiwan (ChungYi Fu)
 SPDX-License-Identifier: Apache-2.0
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.getElementById('board-selector').value = item.BOARD;
 	  }
 	});	
-		
+/*		
 	//載入序列埠選單
 	chrome.serial.getDevices(function(ports) {
 		var com = document.getElementById('com-selector');
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	setInterval(function(){ detectCOM(); }, 5000);
-	
+*/	
 	//載入語言選單
 	//chrome.storage.local.get(['LANG'], function(item) {
 /*	localStorage.getItem(['LANG'], function(item) {

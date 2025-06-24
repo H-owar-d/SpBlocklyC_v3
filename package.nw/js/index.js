@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.getElementById('board-selector').value = item.BOARD;
 	  }
 	});	
-		
+/*	
 	//載入序列埠選單
 	chrome.serial.getDevices(function(ports) {
 		var com = document.getElementById('com-selector');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			});	
 		}
 	});
-
+*/
 	document.getElementById('com-selector').onfocus = function () {
 		detectCOM();
 	}

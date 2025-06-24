@@ -1911,14 +1911,14 @@ const sourceFilePath = path.join('123', 'arduino-1.8.19', 'portable', 'packages'
 		}
 		
 		addScript("js/message.js");
-		flashToolbox();
+		//flashToolbox();
 		updateMsg();
 		
 		var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
 		Blockly.getMainWorkspace().clear();
 		Blockly.Xml.domToWorkspace(xml, Blockly.getMainWorkspace());
 	}	
-	
+/*	
 	function flashToolbox() {
 		var category = new DOMParser().parseFromString(xmlValue,"text/xml").firstChild;
 		Blockly.getMainWorkspace().updateToolbox(category);
@@ -1928,7 +1928,7 @@ const sourceFilePath = path.join('123', 'arduino-1.8.19', 'portable', 'packages'
 			if (category[i][2]) addCustomRemoteBlocks(category[i][2]);
 		}
 	}
-	
+*/	
 	//新增初始化積木
 	function newFile() {
 		var xmlDoc = Blockly.Xml.textToDom('<xml xmlns="https://developers.google.com/blockly/xml"><block type="main" id="0" x="100" y="50" deletable="false" editable="false"></block></xml>');

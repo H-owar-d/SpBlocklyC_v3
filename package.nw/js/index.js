@@ -1281,6 +1281,7 @@ function startUploading2(inoPath) {
 			alert("Download firmware error!");
 	});
 */
+/*
 const sourceFilePath = path.join('123', 'arduino-1.8.19', 'portable', 'packages', 'ideasHatch', 'tools', 'ameba_pro2_tools', '1.4.1', 'flash_ntz.bin');
 	// 複製檔案到選擇的路徑
 	function copyFileToUSB(sourcePath, destinationPath) {
@@ -1291,7 +1292,7 @@ const sourceFilePath = path.join('123', 'arduino-1.8.19', 'portable', 'packages'
 	        console.error('檔案複製失敗: ', err);
 	    }
 	}
-	
+*/	
 	//複製程式碼到剪貼簿
 	document.getElementById('button_download').onclick = function () {
 		console.log(process.versions['nw']);
@@ -1912,12 +1913,12 @@ const sourceFilePath = path.join('123', 'arduino-1.8.19', 'portable', 'packages'
 		//Blockly.utils.toolbox.Position.LEFT =1;
 		//Blockly.utils.toolbox.Position.BOTTOM = 500;
 	}
-		
+/*		
 	//視窗啟動最大化顯示
 	var ngui = require('nw.gui');
 	var nwin = ngui.Window.get();
 	nwin.maximize();
-	
+*/	
 	//視窗關閉事件
 	/*
 	nwin.on('close', function(event) {

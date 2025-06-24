@@ -172,7 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	//載入工具箱目錄
 	$.ajax({
 		type: "GET" ,
-		url: "category/category.xml" ,
+		//url: "category/category.xml" ,
+		url: "https://h-owar-d.github.io/SpBlocklyC_v3/package.nw/category/category.xml" ,
 		dataType: "xml",
 		timeout: 3000,
 		async: false,

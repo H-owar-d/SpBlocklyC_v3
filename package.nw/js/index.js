@@ -2017,7 +2017,7 @@ function contentZoom(content) {
 		}
 	}
 }
-
+/*
 var gui = require('nw.gui');
 console.log(process.versions['nw']);
 var win = gui.Window.get();
@@ -2034,7 +2034,7 @@ win.on('close', function(event) {
 		win.close(true);
 	}
 }); 
-
+*/
 var http = require('http');
 var fs = require('fs');
 var path = require('path');

@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	//chrome.storage.local.get(['BOARD'], function(item) {
-	localStorage.storage.local.get(['BOARD'], function(item) {
+	localStorage.local.get(['BOARD'], function(item) {
 	  if(item.BOARD) {
 		//console.log("reload board setting to " + item.BOARD);
 		document.getElementById('board-selector').value = item.BOARD;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			com.add(new Option("COM?", ""));
 		else {
 			//chrome.storage.local.get(['COM'], function(item) {
-			localStorage.storage.local.get(['COM'], function(item) {
+			localStorage.local.get(['COM'], function(item) {
 			  if(item.COM) {
 				console.log("reload com setting to " + item.COM);
 				com.value = item.COM;

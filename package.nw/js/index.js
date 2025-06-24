@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		url: "https://h-owar-d.github.io/SpBlocklyC_v3/package.nw/category/category.xml" ,
 		dataType: "xml",
 		timeout: 3000,
-		async: false,
+		async: true,
 		success: function(xml, textStatus) {
 			if (xml.firstChild) {
 				var toolbox_ = document.getElementById('toolbox');

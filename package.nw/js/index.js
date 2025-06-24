@@ -971,8 +971,8 @@ function startUploading2(inoPath) {
 			}, 1000);			
 			
 			newFile();
-			detectCOM();
-			changeLanguage();
+			//detectCOM();
+			
 
 			//當工作區變動
 			var blockChange = {};
@@ -1279,7 +1279,7 @@ function startUploading2(inoPath) {
 		}
 	}
 	updateMsg();
-	//changeLanguage();
+	changeLanguage();
 /* 無法辨識 download 結束
 	const downloadLink = document.querySelector('a[download]');
 	downloadLink.addEventListener('click',function()

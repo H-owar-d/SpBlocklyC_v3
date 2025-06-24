@@ -318,17 +318,18 @@
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/bootstrap.min.js" integrity="sha256-u+l2mGjpmGK/mFgUncmMcFKdMijvV+J3odlDJZSNUu8=" crossorigin="anonymous"></script>
+
+<script src="vs/loader.js"></script>
 <script>
 // Monaco uses a custom amd loader that over-rides node's require.
 // Keep a reference to node's require so we can restore it after executing the amd loader file.
-//var nodeRequire = require;
+var nodeRequire = require;
 </script>
-<script src="vs/loader.js"></script>
 <script>
 // Save Monaco's amd require and restore Node's require
 var amdRequire = require;
-//require = nodeRequire;
-//require.nodeRequire = require;
+require = nodeRequire;
+require.nodeRequire = require;
 </script>
 
 <script>
@@ -340,6 +341,7 @@ baseUrl: ''
 self.module = undefined;
 
 // workaround monaco-typescript not understanding the environment
+self.process = self.process || {};//new add
 self.process.browser = true;
 </script>
 <script src="vs/editor/editor.main.nls.js"></script>

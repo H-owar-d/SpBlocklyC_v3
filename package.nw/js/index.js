@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			});	
 		}
 	});
-*/
+
 	document.getElementById('com-selector').onfocus = function () {
 		detectCOM();
 	}
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	setInterval(function(){ detectCOM(); }, 5000);
-	
+*/	
 	//載入語言選單
 	//chrome.storage.local.get(['LANG'], function(item) {
 /*	localStorage.getItem(['LANG'], function(item) {
@@ -866,7 +866,7 @@ function startUploading2(inoPath) {
 		$("#dialog_putty").dialog(opt).dialog("open");
 		event.preventDefault();
 	}	
-	
+/*	
 	//啟動Arduino IDE 開啟檔案
 	document.getElementById('button_open_ino').onclick = function () {
 		chrome.fileSystem.chooseEntry({type: 'openFile', accepts: [{extensions: ['ino']}] }, function(entry) {
@@ -900,7 +900,7 @@ function startUploading2(inoPath) {
 			});
 		})
 	}
-
+*/
 	setTimeout(function(){
 		
 			var category = document.getElementById('toolbox');
@@ -971,8 +971,8 @@ function startUploading2(inoPath) {
 			}, 1000);			
 			
 			newFile();
-			detectCOM();
-			changeLanguage();
+			//detectCOM();
+
 
 			//當工作區變動
 			var blockChange = {};
@@ -1278,7 +1278,7 @@ function startUploading2(inoPath) {
 		}
 	}
 	updateMsg();
-	
+	changeLanguage();
 /* 無法辨識 download 結束
 	const downloadLink = document.querySelector('a[download]');
 	downloadLink.addEventListener('click',function()

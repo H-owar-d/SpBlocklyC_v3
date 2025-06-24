@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	//載入開發板選單
 	$.ajax({
 		type: "GET" ,
-		url: "board/board.xml" ,
+		//url: "board/board.xml" ,
+		url: "https://h-owar-d.github.io/SpBlocklyC_v3/package.nw/board/board.xml" ,
 		dataType: "xml",
 		timeout: 3000,
 		async: false,

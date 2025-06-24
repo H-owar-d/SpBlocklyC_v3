@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('lang-selector').value = lang;
 	}
 			
-	changeLanguage();
+	//changeLanguage();
 	
 	//載入工具箱目錄
 	$.ajax({

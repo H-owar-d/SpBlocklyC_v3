@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 	var lang = localStorage.getItem('LANG') || "zh-hant";
 	if (typeof language != "undefined") {
+			
     for (var i = 0; i < language.length; i++) {
         if (language[i][0] == lang) {
             addScript(language[i][1]);
@@ -190,6 +191,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.getElementById('lang-selector').value = lang;
+    		if (document.getElementById('lang-selector').value=="en")
+					addScript("msg/en.js");
+				else
+					addScript("msg/zh-hant.js");
 	}
 			
 	
@@ -865,7 +870,7 @@ function startUploading2(inoPath) {
 		$("#dialog_putty").dialog(opt).dialog("open");
 		event.preventDefault();
 	}	
-	
+/*	
 	//啟動Arduino IDE 開啟檔案
 	document.getElementById('button_open_ino').onclick = function () {
 		chrome.fileSystem.chooseEntry({type: 'openFile', accepts: [{extensions: ['ino']}] }, function(entry) {
@@ -899,7 +904,7 @@ function startUploading2(inoPath) {
 			});
 		})
 	}
-
+*/
 	setTimeout(function(){
 		
 			var category = document.getElementById('toolbox');
@@ -933,7 +938,7 @@ function startUploading2(inoPath) {
 					}	
 				}
 			);
-			
+			changeLanguage();
 			//新增邊緣捲動插件
 			//const AutoScrollOptionsPlugin = new AutoScroll(workspace);
 			const scrollOptionsPlugin = new ScrollOptions(workspace);

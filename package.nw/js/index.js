@@ -786,7 +786,7 @@ function startUploading2(inoPath) {
 
 	var fs = require('fs-extra');
 	//編譯韌體
-	document.getElementById('button_compiler').onclick = function () {
+	document.getElementById('button_compiler').onclick = async function () {
 		//fs.ensureDirSync(tmpBuildDir);
 		//writeInoFile(tmpInoDir, tmpInoFilename);
 		//startUploading(tmpInoDir + tmpInoFilename);

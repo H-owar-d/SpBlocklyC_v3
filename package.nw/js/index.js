@@ -788,8 +788,34 @@ function startUploading2(inoPath) {
 	//編譯韌體
 	document.getElementById('button_compiler').onclick = function () {
 		//fs.ensureDirSync(tmpBuildDir);
-    writeInoFile(tmpInoDir, tmpInoFilename);
-    startUploading(tmpInoDir + tmpInoFilename);
+		//writeInoFile(tmpInoDir, tmpInoFilename);
+		//startUploading(tmpInoDir + tmpInoFilename);
+		try {
+			const code = Blockly.Arduino.workspaceToCode(); // 從積木產出程式碼
+			const blob = new Blob([code], { type: 'text/plain' });
+
+			const formData = new FormData();
+			formData.append('sketch', blob, 'sketch.ino');
+
+			const response = await fetch('http://localhost:3000/compile', {
+			  method: 'POST',
+			  body: formData
+			});
+
+			if (response.ok) {
+			  const compiledBlob = await response.blob();
+			  const a = document.createElement('a');
+			  a.href = URL.createObjectURL(compiledBlob);
+			  a.download = downloadName;
+			  a.click();
+			} else {
+			  const err = await response.text();
+			  alert("編譯失敗：\n" + err);
+			}
+		  } catch (error) {
+			console.error("上傳或編譯錯誤：", error);
+			alert("錯誤：" + error.message);
+		  }
 }
 	
 	var fs = require('fs-extra');

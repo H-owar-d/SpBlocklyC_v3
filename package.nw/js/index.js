@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					addScript("msg/zh-hant.js");
 	}
 	//console.timeEnd('SectionC');		
-	//console.time('SectionD');
+	console.time('SectionD');
 	//載入工具箱目錄
 	$.ajax({
 		type: "GET" ,
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(jqXHR.statusText);
 		}
 	});	
-	//console.timeEnd('SectionD');
+	console.timeEnd('SectionD');
 	//console.time('SectionE');
 	function decode(buf, encoding = cmd_encoding) {
 	  return iconv.decode(buf, encoding);
@@ -1079,13 +1079,13 @@ function startUploading2(inoPath) {
 		
 		addScript(blocks_path);
 		addScript(javascript_path);
-		
+		console.time('SectionF1');
 		$.ajax({
 			type: "GET" ,
 			url: toolbox_path ,
 			dataType: "xml",
 			timeout: 3000,
-			async: false,
+			async: true,
 			success: function(xml, textStatus) {
 /*
 				if (new XMLSerializer().serializeToString(xml.firstChild))
@@ -1124,13 +1124,15 @@ function startUploading2(inoPath) {
 			error: function (jqXHR, textStatus, errorThrown) {
 				//console.log(jqXHR.statusText);
 			}
-		});	
+		});
+		console.timeEnd('SectionF1');		
 		console.timeEnd('SectionF');
 	}
 	
-	console.time('SectionG');
+	
 	//載入遠端自訂積木
 	function addCustomRemoteBlocks(customBlocksPath) {
+		console.time('SectionG');
 		var blocks_path = customBlocksPath+"blocks.js";   //載入自訂積木定義檔	
 		var javascript_path = customBlocksPath+"javascript.js";   //載入自訂積木轉出程式碼檔	
 		var toolbox_path = customBlocksPath+"toolbox.xml";  //載入自訂積木目錄檔	
@@ -1195,8 +1197,9 @@ function startUploading2(inoPath) {
 				//console.log(jqXHR.statusText);
 			}
 		});	
+		console.timeEnd('SectionG');
 	}		
-	console.timeEnd('SectionG');
+	
 	function addScript(url) {
 		var basePath = "/SpBlocklyC_v3/package.nw/";
 		var s = document.createElement("script");
@@ -1211,7 +1214,7 @@ function startUploading2(inoPath) {
 				customCategory.splice(i, 1);
 		}
 	}
-	console.time('SectionI');
+	
 	//工具箱目錄顯示選單
 	document.getElementById('button_toolbox').onclick = function () {
 		toolboxCategory();
@@ -1237,9 +1240,10 @@ function startUploading2(inoPath) {
 		$("#dialog_toolbox").dialog(opt).dialog("open");
 		event.preventDefault();
 	}
-	console.timeEnd('SectionI');
+	
 	//工具箱目錄顯示選單內容
 	function toolboxCategory() {
+		console.time('SectionI');
 		var categorymenu = '<table width="580">';
 		var items = Blockly.getMainWorkspace().getToolbox().getToolboxItems();
 		var j=0;
@@ -1260,6 +1264,7 @@ function startUploading2(inoPath) {
 		if (j%3!=0) categorymenu +="</tr>";
 		categorymenu +="<table>";
 		document.getElementById('dialog_toolbox').innerHTML = categorymenu;
+		console.timeEnd('SectionI');
 	}
 
 	//程式碼區塊顯示

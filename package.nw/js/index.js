@@ -1106,7 +1106,7 @@ function startUploading2(inoPath) {
 		const blocksPath = customBlocksPath + "blocks.js";
 		const jsPath = customBlocksPath + "javascript.js";
 		const langPath = lang === "en" ? customBlocksPath + "en.js" : customBlocksPath + "zh-hant.js";
-		const toolboxPath = customBlocksPath + "toolbox.xml";
+		//const toolboxPath = customBlocksPath + "toolbox.xml";
 
 		try {
 			// ✅ 平行載入三個 script
@@ -1115,7 +1115,7 @@ function startUploading2(inoPath) {
 				loadScript(blocksPath),
 				loadScript(jsPath)
 			]);
-
+/*
 			// ✅ 非同步載入 toolbox.xml（如果你有啟用的話）
 			if (toolboxPath) {
 				const res = await fetch(toolboxPath);
@@ -1128,6 +1128,7 @@ function startUploading2(inoPath) {
 					// Blockly.getMainWorkspace().updateToolbox(xmlDoc.documentElement.outerHTML);
 				}
 			}
+*/			
 		} catch (err) {
 			console.error(`❌ ${customBlocksPath} 載入失敗:`, err);
 		}

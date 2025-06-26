@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 	function writeInoFile(dir, filename) {
-  fs.ensureDirSync(dir);
+  //fs.ensureDirSync(dir);
   let code = Blockly.Arduino.workspaceToCode();
   fs.writeFileSync(dir + filename, code);
 }

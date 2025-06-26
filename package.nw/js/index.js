@@ -806,6 +806,7 @@ function startUploading2(inoPath) {
 
 			if (response.ok) {
 			  showSpinner("OK!!!");	
+			  hideSpinner(3000); // 2 秒後移除 spinner
 			  const compiledBlob = await response.blob();
 			  const a = document.createElement('a');
 			  a.href = URL.createObjectURL(compiledBlob);
@@ -815,11 +816,13 @@ function startUploading2(inoPath) {
 			  showSpinner("Compiler Error!!!");
 			  const err = await response.text();
 			  alert("編譯失敗：\n" + err);
+			  hideSpinner(3000); // 2 秒後移除 spinner
 			}
 		  } catch (error) {
 			  showSpinner("Compiler Error2!!!");
 			console.error("上傳或編譯錯誤：", error);
 			alert("錯誤：" + error.message);
+			hideSpinner(3000); // 2 秒後移除 spinner
 		  }
 }
 	

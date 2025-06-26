@@ -43,7 +43,7 @@ var sysPath = scriptPath.substr(scriptPath.indexOf("/",scriptPath.indexOf("//")+
 
 document.addEventListener('DOMContentLoaded', function() {
 	
-	console.time('SectionA');
+	//console.time('SectionA');
 	//載入開發板選單
 	$.ajax({
 		type: "GET" ,
@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(errorThrown);
 		}
 	});
-	console.timeEnd('SectionA');
-	console.time('SectionB');
+	//console.timeEnd('SectionA');
+	//console.time('SectionB');
 	document.getElementById('board-selector').onclick = function () {
 		var val = "";
 		if (this.selectedIndex!=-1) val = this.options[this.selectedIndex].value;
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			Blockly.Xml.domToWorkspace(xml, Blockly.getMainWorkspace());
 		}	
 	}
-	console.timeEnd('SectionB');
-	console.time('SectionC');
+	//console.timeEnd('SectionB');
+	//console.time('SectionC');
 	//chrome.storage.local.get(['BOARD'], function(item) {
 	localStorage.getItem(['BOARD'], function(item) {
 	  if(item.BOARD) {
@@ -199,8 +199,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				else
 					addScript("msg/zh-hant.js");
 	}
-	console.timeEnd('SectionC');		
-	console.time('SectionD');
+	//console.timeEnd('SectionC');		
+	//console.time('SectionD');
 	//載入工具箱目錄
 	$.ajax({
 		type: "GET" ,
@@ -224,12 +224,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(jqXHR.statusText);
 		}
 	});	
-	console.timeEnd('SectionD');
-	console.time('SectionE');
+	//console.timeEnd('SectionD');
+	//console.time('SectionE');
 	function decode(buf, encoding = cmd_encoding) {
 	  return iconv.decode(buf, encoding);
 	}
-	console.timeEnd('SectionE');
+	//console.timeEnd('SectionE');
 	var tmpInoDir = 'sketches/tmp/';
 	var tmpInoFilename = 'tmp.ino';
 	var tmpBuildDir = 'build/tmp/';
@@ -1057,7 +1057,7 @@ function startUploading2(inoPath) {
 			
 	}, 1000);	
 	
-
+	console.time('SectionF');
 	//載入系統自訂積木
 	function addSystemBlocks(customBlocksPath, insertAfterCategoryName) {
 		var blocks_path = customBlocksPath+"blocks.js";   //載入自訂積木定義檔	
@@ -1122,7 +1122,8 @@ function startUploading2(inoPath) {
 			}
 		});	
 	}
-	
+	console.timeEnd('SectionF');
+	console.time('SectionG');
 	//載入遠端自訂積木
 	function addCustomRemoteBlocks(customBlocksPath) {
 		var blocks_path = customBlocksPath+"blocks.js";   //載入自訂積木定義檔	
@@ -1190,7 +1191,7 @@ function startUploading2(inoPath) {
 			}
 		});	
 	}		
-
+	console.timeEnd('SectionG');
 	function addScript(url) {
 		var basePath = "/SpBlocklyC_v3/package.nw/";
 		var s = document.createElement("script");

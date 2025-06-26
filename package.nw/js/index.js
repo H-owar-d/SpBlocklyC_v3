@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(errorThrown);
 		}
 	});
-	
+	console.timeEnd('SectionA');
 	console.time('SectionB');
 	document.getElementById('board-selector').onclick = function () {
 		var val = "";
@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			Blockly.Xml.domToWorkspace(xml, Blockly.getMainWorkspace());
 		}	
 	}
+	console.timeEnd('SectionB');
 	console.time('SectionC');
 	//chrome.storage.local.get(['BOARD'], function(item) {
 	localStorage.getItem(['BOARD'], function(item) {
@@ -198,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				else
 					addScript("msg/zh-hant.js");
 	}
-			
+	console.timeEnd('SectionC');		
 	console.time('SectionD');
 	//載入工具箱目錄
 	$.ajax({
@@ -223,11 +224,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(jqXHR.statusText);
 		}
 	});	
+	console.timeEnd('SectionD');
 	console.time('SectionE');
 	function decode(buf, encoding = cmd_encoding) {
 	  return iconv.decode(buf, encoding);
 	}
-	
+	console.timeEnd('SectionE');
 	var tmpInoDir = 'sketches/tmp/';
 	var tmpInoFilename = 'tmp.ino';
 	var tmpBuildDir = 'build/tmp/';

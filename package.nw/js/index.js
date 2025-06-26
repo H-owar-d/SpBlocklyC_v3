@@ -920,7 +920,7 @@ function startUploading2(inoPath) {
 				}
 			}
 			xmlValue+='</xml>';			
-		
+			console.Time('SectionH');
 			//初始化工作區
 			const workspace = Blockly.inject('root',{
 					media: 'media/'
@@ -942,6 +942,7 @@ function startUploading2(inoPath) {
 					}	
 				}
 			);
+			console.timeEnd('SectionH');
 			changeLanguage();
 			//新增邊緣捲動插件
 			//const AutoScrollOptionsPlugin = new AutoScroll(workspace);
@@ -1206,7 +1207,7 @@ function startUploading2(inoPath) {
 				customCategory.splice(i, 1);
 		}
 	}
-
+	console.time('SectionI');
 	//工具箱目錄顯示選單
 	document.getElementById('button_toolbox').onclick = function () {
 		toolboxCategory();
@@ -1232,7 +1233,7 @@ function startUploading2(inoPath) {
 		$("#dialog_toolbox").dialog(opt).dialog("open");
 		event.preventDefault();
 	}
-	
+	console.timeEnd('SectionI');
 	//工具箱目錄顯示選單內容
 	function toolboxCategory() {
 		var categorymenu = '<table width="580">';

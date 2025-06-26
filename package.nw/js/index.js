@@ -949,7 +949,7 @@ function startUploading2(inoPath) {
 			const scrollOptionsPlugin = new ScrollOptions(workspace);
 			scrollOptionsPlugin.init({enableWheelScroll: true, enableEdgeScroll: true});
 			ScrollBlockDragger.edgeScrollEnabled = false;
-			
+			console.time('SectionI');
 			//新增系統自訂積木
 			if (typeof systemBlocks != "undefined") {
 				for (var i=0;i<systemBlocks.length;i++) {
@@ -977,8 +977,8 @@ function startUploading2(inoPath) {
 					}
 					Blockly.getMainWorkspace().resize();
 				});	
-			}, 1000);			
-			
+			}, 10);			
+			console.timeEnd('SectionI');
 			newFile();
 			//detectCOM();
 			

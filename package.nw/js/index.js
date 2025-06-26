@@ -232,12 +232,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	//console.timeEnd('SectionE');
 	var tmpInoDir = 'sketches/tmp/';
 	var tmpInoFilename = 'tmp.ino';
-	var tmpBuildDir = 'build/tmp/';
+	//var tmpBuildDir = 'build/tmp/';
 	var fs = require('fs-extra');
 	
 	function handleUploadButton() {
   closeSerialMonitor().then(function() {
-    fs.ensureDirSync(tmpBuildDir);
+    //fs.ensureDirSync(tmpBuildDir);
     writeInoFile(tmpInoDir, tmpInoFilename);
     startUploading(tmpInoDir + tmpInoFilename);
   });
@@ -787,7 +787,7 @@ function startUploading2(inoPath) {
 	var fs = require('fs-extra');
 	//編譯韌體
 	document.getElementById('button_compiler').onclick = function () {
-		fs.ensureDirSync(tmpBuildDir);
+		//fs.ensureDirSync(tmpBuildDir);
     writeInoFile(tmpInoDir, tmpInoFilename);
     startUploading(tmpInoDir + tmpInoFilename);
 }
@@ -795,7 +795,7 @@ function startUploading2(inoPath) {
 	var fs = require('fs-extra');
 	//下載韌體
 	document.getElementById('button_upload').onclick = function () {
-		fs.ensureDirSync(tmpBuildDir);
+		//fs.ensureDirSync(tmpBuildDir);
     writeInoFile(tmpInoDir, tmpInoFilename);
     startUploading2(tmpInoDir + tmpInoFilename);		
 	}

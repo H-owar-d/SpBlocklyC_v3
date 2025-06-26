@@ -977,7 +977,7 @@ function startUploading2(inoPath) {
 					}
 					Blockly.getMainWorkspace().resize();
 				});	
-			}, 1000);			
+			}, 10);			
 			console.timeEnd('SectionI');
 			newFile();
 			//detectCOM();

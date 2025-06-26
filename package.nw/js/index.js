@@ -1,4 +1,4 @@
-﻿/*
+﻿¿/*
 @license
 Copyright 2022 Taiwan (ChungYi Fu)
 SPDX-License-Identifier: Apache-2.0
@@ -43,6 +43,7 @@ var sysPath = scriptPath.substr(scriptPath.indexOf("/",scriptPath.indexOf("//")+
 
 document.addEventListener('DOMContentLoaded', function() {
 	
+	console.time('SectionA');
 	//載入開發板選單
 	$.ajax({
 		type: "GET" ,
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 	
+	console.time('SectionB');
 	document.getElementById('board-selector').onclick = function () {
 		var val = "";
 		if (this.selectedIndex!=-1) val = this.options[this.selectedIndex].value;
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			Blockly.Xml.domToWorkspace(xml, Blockly.getMainWorkspace());
 		}	
 	}
-	
+	console.time('SectionC');
 	//chrome.storage.local.get(['BOARD'], function(item) {
 	localStorage.getItem(['BOARD'], function(item) {
 	  if(item.BOARD) {
@@ -197,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					addScript("msg/zh-hant.js");
 	}
 			
-	
+	console.time('SectionD');
 	//載入工具箱目錄
 	$.ajax({
 		type: "GET" ,
@@ -221,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(jqXHR.statusText);
 		}
 	});	
-	
+	console.time('SectionE');
 	function decode(buf, encoding = cmd_encoding) {
 	  return iconv.decode(buf, encoding);
 	}

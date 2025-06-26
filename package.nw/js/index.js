@@ -1063,7 +1063,7 @@ function startUploading2(inoPath) {
 	
 	//載入系統自訂積木
 	function addSystemBlocks(customBlocksPath, insertAfterCategoryName) {
-		console.time('SectionF');
+		console.time('SectionF');		
 		var blocks_path = customBlocksPath+"blocks.js";   //載入自訂積木定義檔	
 		var javascript_path = customBlocksPath+"javascript.js";   //載入自訂積木轉出程式碼檔	
 		var toolbox_path = null;//customBlocksPath+"toolbox.xml";  //載入自訂積木目錄檔	
@@ -1087,6 +1087,7 @@ function startUploading2(inoPath) {
 			timeout: 3000,
 			async: true,
 			success: function(xml, textStatus) {
+				
 /*
 				if (new XMLSerializer().serializeToString(xml.firstChild))
 					customCategory.push([new XMLSerializer().serializeToString(xml.firstChild) ,insertAfterCategoryName ,'']);
@@ -1120,13 +1121,15 @@ function startUploading2(inoPath) {
 					console.log(error);
 				}
 */
+				console.timeEnd('SectionF1');
+				console.timeEnd('SectionF');
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
 				//console.log(jqXHR.statusText);
+				console.timeEnd('SectionF1');
+				console.timeEnd('SectionF');
 			}
 		});
-		console.timeEnd('SectionF1');		
-		console.timeEnd('SectionF');
 	}
 	
 	

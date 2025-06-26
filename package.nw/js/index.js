@@ -955,7 +955,7 @@ function startUploading2(inoPath) {
 				for (var i=0;i<systemBlocks.length;i++) {
 					var customBlocksPath = systemBlocks[i][0];  //自訂積木連結
 					var insertAfterCategoryName = systemBlocks[i][1];  //可將自訂積木插入在指定目錄後
-					addSystemBlocks(customBlocksPath, insertAfterCategoryName);
+					//addSystemBlocks(customBlocksPath, insertAfterCategoryName);
 				}
 			}
 			
@@ -1062,8 +1062,7 @@ function startUploading2(inoPath) {
 	
 	
 	//載入系統自訂積木
-	function addSystemBlocks(customBlocksPath, insertAfterCategoryName) {
-		console.time('SectionF');		
+	function addSystemBlocks(customBlocksPath, insertAfterCategoryName) {	
 		var blocks_path = customBlocksPath+"blocks.js";   //載入自訂積木定義檔	
 		var javascript_path = customBlocksPath+"javascript.js";   //載入自訂積木轉出程式碼檔	
 		var toolbox_path = null;//customBlocksPath+"toolbox.xml";  //載入自訂積木目錄檔	
@@ -1079,13 +1078,12 @@ function startUploading2(inoPath) {
 		
 		addScript(blocks_path);
 		addScript(javascript_path);
-		console.time('SectionF1');
 		$.ajax({
 			type: "GET" ,
 			url: toolbox_path ,
 			dataType: "xml",
 			timeout: 3000,
-			async: true,
+			async: false,
 			success: function(xml, textStatus) {
 				
 /*
@@ -1121,13 +1119,9 @@ function startUploading2(inoPath) {
 					console.log(error);
 				}
 */
-				console.timeEnd('SectionF1');
-				console.timeEnd('SectionF');
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
 				//console.log(jqXHR.statusText);
-				console.timeEnd('SectionF1');
-				console.timeEnd('SectionF');
 			}
 		});
 	}

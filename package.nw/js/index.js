@@ -977,7 +977,7 @@ function startUploading2(inoPath) {
 					}
 					Blockly.getMainWorkspace().resize();
 				});	
-			}, 10);			
+			}, 1000);			
 			console.timeEnd('SectionI');
 			newFile();
 			//detectCOM();
@@ -1290,6 +1290,14 @@ function startUploading2(inoPath) {
 	}
 	updateMsg();
 	
+	window.addEventListener('load', () => {
+		  console.log('Page fully loaded at', performance.now());
+
+		  const paintEntries = performance.getEntriesByType('paint');
+		  paintEntries.forEach(entry => {
+			console.log(`${entry.name}: ${entry.startTime.toFixed(2)} ms`);
+		  });
+	});
 /* 無法辨識 download 結束
 	const downloadLink = document.querySelector('a[download]');
 	downloadLink.addEventListener('click',function()

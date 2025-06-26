@@ -920,7 +920,7 @@ function startUploading2(inoPath) {
 				}
 			}
 			xmlValue+='</xml>';			
-			console.Time('SectionH');
+			console.time('SectionH');
 			//初始化工作區
 			const workspace = Blockly.inject('root',{
 					media: 'media/'

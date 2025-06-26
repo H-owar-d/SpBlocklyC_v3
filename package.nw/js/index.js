@@ -976,9 +976,11 @@ function startUploading2(inoPath) {
 						}
 					}
 					Blockly.getMainWorkspace().resize();
+					
+					console.timeEnd('SectionI');
 				});	
-			}, 10);			
-			console.timeEnd('SectionI');
+			}, 1000);			
+			
 			newFile();
 			//detectCOM();
 			
@@ -1058,9 +1060,10 @@ function startUploading2(inoPath) {
 			
 	}, 1000);	
 	
-	console.time('SectionF');
+	
 	//載入系統自訂積木
 	function addSystemBlocks(customBlocksPath, insertAfterCategoryName) {
+		console.time('SectionF');
 		var blocks_path = customBlocksPath+"blocks.js";   //載入自訂積木定義檔	
 		var javascript_path = customBlocksPath+"javascript.js";   //載入自訂積木轉出程式碼檔	
 		var toolbox_path = null;//customBlocksPath+"toolbox.xml";  //載入自訂積木目錄檔	
@@ -1122,8 +1125,9 @@ function startUploading2(inoPath) {
 				//console.log(jqXHR.statusText);
 			}
 		});	
+		console.timeEnd('SectionF');
 	}
-	console.timeEnd('SectionF');
+	
 	console.time('SectionG');
 	//載入遠端自訂積木
 	function addCustomRemoteBlocks(customBlocksPath) {

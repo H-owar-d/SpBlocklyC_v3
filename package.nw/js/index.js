@@ -955,7 +955,7 @@ function startUploading2(inoPath) {
 				for (var i=0;i<systemBlocks.length;i++) {
 					var customBlocksPath = systemBlocks[i][0];  //自訂積木連結
 					var insertAfterCategoryName = systemBlocks[i][1];  //可將自訂積木插入在指定目錄後
-					//addSystemBlocks(customBlocksPath, insertAfterCategoryName);
+					addSystemBlocks(customBlocksPath, insertAfterCategoryName);
 				}
 			}
 			
@@ -1060,7 +1060,7 @@ function startUploading2(inoPath) {
 			
 	}, 1000);	
 	
-	
+/*	
 	//載入系統自訂積木
 	function addSystemBlocks(customBlocksPath, insertAfterCategoryName) {	
 		var blocks_path = customBlocksPath+"blocks.js";   //載入自訂積木定義檔	
@@ -1084,48 +1084,55 @@ function startUploading2(inoPath) {
 			dataType: "xml",
 			timeout: 3000,
 			async: false,
-			success: function(xml, textStatus) {
-				
-/*
-				if (new XMLSerializer().serializeToString(xml.firstChild))
-					customCategory.push([new XMLSerializer().serializeToString(xml.firstChild) ,insertAfterCategoryName ,'']);
-				
-				try {
-					var len = new DOMParser().parseFromString(xmlValue,"text/xml").firstChild.childNodes.length;
-					var xmlNewValue='<xml id="toolbox">';
-					if (len>0) {
-							var exist = false;
-							for (var i=0;i<len;i++){
-								if (insertAfterCategoryName=="") {
-									xmlNewValue+=new XMLSerializer().serializeToString(xml.firstChild);
-									insertAfterCategoryName="insertTop";
-									exist = true;
-								}
-								var node = new XMLSerializer().serializeToString(new DOMParser().parseFromString(xmlValue,"text/xml").firstChild.childNodes[i]);
-								xmlNewValue+=node;
-								if (node.indexOf(insertAfterCategoryName)!=-1&&insertAfterCategoryName!="") {
-									xmlNewValue+=new XMLSerializer().serializeToString(xml.firstChild);
-									exist = true;
-								}
-							}
-							if (exist == false)
-								xmlNewValue+=new XMLSerializer().serializeToString(xml.firstChild);
-					}
-					xmlNewValue+='</xml>';
-					xmlValue = xmlNewValue;
-					
-					Blockly.getMainWorkspace().updateToolbox(xmlValue);	
-				} catch (error) {
-					console.log(error);
-				}
-*/
+			success: function(xml, textStatus) {			
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
 				//console.log(jqXHR.statusText);
 			}
 		});
 	}
-	
+*/	
+	const loadedBlockPaths = new Set(); // ✅ 快取載入過的 blocks
+
+	async function addSystemBlocks(customBlocksPath, insertAfterCategoryName) {
+		console.time(`load:${customBlocksPath}`);
+		if (loadedBlockPaths.has(customBlocksPath)) {
+			console.log(`[SKIP] ${customBlocksPath} 已載入`);
+			console.timeEnd(`load:${customBlocksPath}`);
+			return;
+		}
+		loadedBlockPaths.add(customBlocksPath);
+
+		const blocksPath = customBlocksPath + "blocks.js";
+		const jsPath = customBlocksPath + "javascript.js";
+		const langPath = lang === "en" ? customBlocksPath + "en.js" : customBlocksPath + "zh-hant.js";
+		const toolboxPath = customBlocksPath + "toolbox.xml";
+
+		try {
+			// ✅ 平行載入三個 script
+			await Promise.all([
+				loadScript(langPath),
+				loadScript(blocksPath),
+				loadScript(jsPath)
+			]);
+
+			// ✅ 非同步載入 toolbox.xml（如果你有啟用的話）
+			if (toolboxPath) {
+				const res = await fetch(toolboxPath);
+				if (res.ok) {
+					const xmlText = await res.text();
+					const xmlDoc = new DOMParser().parseFromString(xmlText, "text/xml");
+					
+					// TODO: 根據你的需求加入 updateToolbox 的邏輯
+					// 例如：
+					// Blockly.getMainWorkspace().updateToolbox(xmlDoc.documentElement.outerHTML);
+				}
+			}
+		} catch (err) {
+			console.error(`❌ ${customBlocksPath} 載入失敗:`, err);
+		}
+		console.timeEnd(`load:${customBlocksPath}`);
+	}
 	
 	//載入遠端自訂積木
 	function addCustomRemoteBlocks(customBlocksPath) {
@@ -1196,6 +1203,16 @@ function startUploading2(inoPath) {
 		});	
 		console.timeEnd('SectionG');
 	}		
+	
+	function loadScript(src) {
+		return new Promise((resolve, reject) => {
+			const script = document.createElement("script");
+			script.src = src;
+			script.onload = () => resolve(src);
+			script.onerror = () => reject(new Error("載入失敗：" + src));
+			document.head.appendChild(script);
+		});
+	}
 	
 	function addScript(url) {
 		var basePath = "/SpBlocklyC_v3/package.nw/";

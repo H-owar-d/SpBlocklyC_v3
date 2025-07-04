@@ -800,7 +800,7 @@ function startUploading2(inoPath) {
 			formData.append('sketch', blob, 'sketch.ino');
 
 			//const response = await fetch('http://localhost:3000/compile', {
-			const response = await fetch('https://3000-cs-03905771-7b99-4f83-a9fb-7982fd55dcd4.cs-asia-east1-duck.cloudshell.dev/?authuser=1/compile', {
+			const response = await fetch('http://35.206.243.39:3000/compile', {
 			  method: 'POST',
 			  body: formData
 			});

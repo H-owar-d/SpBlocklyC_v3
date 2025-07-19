@@ -800,7 +800,7 @@ function startUploading2(inoPath) {
 			formData.append('sketch', blob, 'sketch.ino');
 
 			//const response = await fetch('http://localhost:3000/compile', {
-			const response = await fetch('https://35.206.243.39/compile', {
+			const response = await fetch('http://35.206.243.39/compile', {
 			  method: 'POST',
 			  body: formData
 			});
